@@ -1,5 +1,5 @@
 <resources>
-    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>
+    <string name="app_name" >Hand Scan - Health Protection</string>
     <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
     <string name="title_activity_main">MainActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -13,4 +13,7 @@
     <string name="title_activity_splash">SplashActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="challenge">Challenge</string>
+    <string name="text_challenge">The habit of washing hands \n will be formed after 7 consecutive days</string>
+    <string name="advice">Advice</string>
 </resources>
