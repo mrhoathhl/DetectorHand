@@ -3,6 +3,7 @@ package com.monster.handscan.protecthealth.fragment;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -10,6 +11,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,6 +26,7 @@ import com.monster.handscan.protecthealth.model.AdviceModel;
 
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AdviceFragment extends Fragment {
 
@@ -31,6 +34,7 @@ public class AdviceFragment extends Fragment {
     ArrayList<AdviceModel> arrayList;
     LinearLayout layout_dot;
     TextView[] dot;
+    ImageButton backBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,11 +48,14 @@ public class AdviceFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_advice, container, false);
         viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         layout_dot = (LinearLayout) view.findViewById(R.id.layout_dot);
+        backBtn = (ImageButton) view.findViewById(R.id.backBtn);
 
-        AdLoader adLoader = new AdLoader.Builder(getContext(), "ca-app-pub-3940256099942544/2247696110")
+        backBtn.setOnClickListener(view1 -> requireActivity().onBackPressed());
+
+        AdLoader adLoader = new AdLoader.Builder(requireActivity(), "ca-app-pub-3940256099942544/2247696110")
                 .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                     @Override
-                    public void onNativeAdLoaded(NativeAd nativeAd) {
+                    public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
                         NativeTemplateStyle styles = new
                                 NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(10000)).build();
                         TemplateView template =view.findViewById(R.id.my_template);
