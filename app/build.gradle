@@ -4,7 +4,7 @@ apply plugin: 'de.undercouch.download'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "org.tensorflow.lite.examples.detection"
+        applicationId "com.monster.handscan.protecthealth"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -56,11 +56,16 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'com.google.android.gms:play-services-ads:20.5.0'
+    implementation 'com.google.code.gson:gson:2.3.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.4'
     interpreterImplementation project(":lib_interpreter")
     taskApiImplementation project(":lib_task_api")
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
+    implementation project(':nativetemplates')
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'com.google.truth:truth:1.0.1'
