@@ -174,8 +174,8 @@ public class MultiBoxTracker {
                 float cornerSize = Math.min(trackedPos.width(), trackedPos.height()) / 8.0f;
                 canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint);
                 relativeLayout.setVisibility(View.VISIBLE);
-                relativeLayout.setX(trackedPos.width() / 2);
-                relativeLayout.setX(trackedPos.height() / 2);
+                relativeLayout.setX(trackedPos.width() / 2 - 70);
+                relativeLayout.setY(trackedPos.height() / 2 - 70);
 
                 return (100 * trackedObjects.get(0).detectionConfidence) >= 65 && (trackedPos.width() / width) * 100 >= 65;
             }

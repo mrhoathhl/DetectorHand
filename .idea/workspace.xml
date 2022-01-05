@@ -45,63 +45,64 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_runtime_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_runtime_2_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_tensorflow_tensorflow_lite_0_0_0_nightly_SNAPSHOT_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_tensorflow_tensorflow_lite_0_0_0_nightly_SNAPSHOT_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_tensorflow_tensorflow_lite_api_0_0_0_nightly_SNAPSHOT_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_tensorflow_tensorflow_lite_api_0_0_0_nightly_SNAPSHOT_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/TFLite_Object_Detection_Demo_App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/TFLite_Object_Detection_Demo_App.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/TFLite_Object_Detection_Demo_App.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/TFLite_Object_Detection_Demo_App.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/nativetemplates/TFLite_Object_Detection_Demo_App.nativetemplates.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/nativetemplates/TFLite_Object_Detection_Demo_App.nativetemplates.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/activity/CameraActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/activity/CameraActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/activity/DetectorActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/activity/DetectorActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/activity/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/activity/SplashActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/adapters/ListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/adapters/ListViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/AdviceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/AdviceFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/ChallengeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/ChallengeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/FirstFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/HistoryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/HistoryFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/SecondFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/SettingFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/fragment/SettingFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/model/ScanHistoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/model/ScanHistoryModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/tracking/MultiBoxTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/monster/handscan/protecthealth/tracking/MultiBoxTracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/reset.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/reset.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_advice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_advice.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_challenge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_challenge.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_first.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_first2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_history.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_second.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_second2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/history_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tfe_od_activity_camera.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tfe_od_activity_camera.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tfe_od_camera_connection_fragment_tracking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tfe_od_camera_connection_fragment_tracking.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/appcompat/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/constraintlayout/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/coordinatorlayout/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/legacy/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/navigation/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/test/ext/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/test/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/viewpager2/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/android/billingclient/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/gms/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/material/group-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/master-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/sdk-registry.xml/sdk-registry.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/.transforms/aa497c0a4228b2689dd407a3e3315fb0/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/.transforms/aa497c0a4228b2689dd407a3e3315fb0/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/generated/source/buildConfig/release/com/monster/handscan/protecthealth/tflite/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/aapt_friendly_merged_manifests/release/aapt/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/aapt_friendly_merged_manifests/release/aapt/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/annotation_processor_list/release/annotationProcessors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/compile_symbol_list/release/R.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/mergeReleaseShaders/merger.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/packageDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/packageDebugAssets/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/packageReleaseAssets/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/packageReleaseResources/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/incremental/release-mergeNativeLibs/merge-state" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/library_manifest/release/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/local_only_symbol_list/release/R-def.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/manifest_merge_blame_file/release/manifest-merger-blame-release-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/merged_manifests/release/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/navigation_json/release/navigation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/intermediates/symbol_list_with_package_name/release/package-aware-r.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_interpreter/build/outputs/aar/lib_interpreter-debug.aar" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/outputs/aar/lib_interpreter-debug.aar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_interpreter/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lib_interpreter/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_task_api/build/.transforms/530d42d5f6be91d86e64912ae2584d61/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_task_api/build/.transforms/530d42d5f6be91d86e64912ae2584d61/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/outputs/logs/manifest-merger-release-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_interpreter/build/tmp/compileReleaseJavaWithJavac/source-classes-mapping.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_task_api/build/.transforms/6530e47b953bd667ab855d49e5e0b87b/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_task_api/build/.transforms/6530e47b953bd667ab855d49e5e0b87b/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_task_api/build/.transforms/6dcd19b592c3859b08416cf4865700b6/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_task_api/build/.transforms/6dcd19b592c3859b08416cf4865700b6/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_task_api/build/.transforms/f77c42194833ae2151a53189f0b88ee3/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_task_api/build/.transforms/f77c42194833ae2151a53189f0b88ee3/transformed/classes/classes.dex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_task_api/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib_task_api/build/intermediates/compile_library_classes_jar/debug/classes.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_task_api/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/lib_task_api/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_task_api/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lib_task_api/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
@@ -114,34 +115,68 @@
       <change beforePath="$PROJECT_DIR$/lib_task_api/build/outputs/aar/lib_task_api-debug.aar" beforeDir="false" afterPath="$PROJECT_DIR$/lib_task_api/build/outputs/aar/lib_task_api-debug.aar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_task_api/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lib_task_api/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/3cd38f982607c655dd99ee9ec7f3fe3e/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/3cd38f982607c655dd99ee9ec7f3fe3e/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/3406237a76d2f7ad40d2b05d69947b30/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/3406237a76d2f7ad40d2b05d69947b30/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/36a7813f1815e924a436b820e3cab3cd/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/36a7813f1815e924a436b820e3cab3cd/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/4f4204406761657968fc4ea46d82caf1/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/4f4204406761657968fc4ea46d82caf1/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/bbad615b24d569520a33999c9d4febdb/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/.transforms/bbad615b24d569520a33999c9d4febdb/transformed/classes/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/generated/source/buildConfig/release/com/google/android/ads/nativetemplates/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/aapt_friendly_merged_manifests/release/aapt/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/aapt_friendly_merged_manifests/release/aapt/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/annotation_processor_list/release/annotationProcessors.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compile_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/compile_symbol_list/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compile_symbol_list/release/R.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/debug/out/drawable_gnt_outline_shape.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/debug/out/drawable_gnt_outline_shape.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/debug/out/drawable_gnt_rounded_corners_shape.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/debug/out/drawable_gnt_rounded_corners_shape.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/debug/out/layout_gnt_medium_template_view.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/debug/out/layout_gnt_medium_template_view.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/debug/out/layout_gnt_small_template_view.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/debug/out/layout_gnt_small_template_view.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/release/out/drawable_gnt_outline_shape.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/release/out/drawable_gnt_rounded_corners_shape.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/release/out/layout_gnt_medium_template_view.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/compiled_local_resources/release/out/layout_gnt_small_template_view.xml.flat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/mergeReleaseShaders/merger.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageDebugAssets/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageDebugResources/merged.dir/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageDebugResources/merged.dir/values/values.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageReleaseAssets/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageReleaseResources/merged.dir/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/packageReleaseResources/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/incremental/release-mergeNativeLibs/merge-state" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/library_manifest/release/AndroidManifest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/local_only_symbol_list/debug/R-def.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/local_only_symbol_list/release/R-def.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/manifest_merge_blame_file/release/manifest-merger-blame-release-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/merged_manifests/release/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/navigation_json/release/navigation.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/packaged_res/debug/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/packaged_res/debug/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/packaged_res/release/drawable/gnt_outline_shape.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/packaged_res/release/drawable/gnt_rounded_corners_shape.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/packaged_res/release/layout/gnt_medium_template_view.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/packaged_res/release/layout/gnt_small_template_view.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/packaged_res/release/values/values.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/intermediates/symbol_list_with_package_name/release/package-aware-r.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/outputs/aar/nativetemplates-debug.aar" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/outputs/aar/nativetemplates-debug.aar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nativetemplates/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nativetemplates/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nativetemplates/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/outputs/logs/manifest-merger-release-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nativetemplates/build/tmp/compileReleaseJavaWithJavac/source-classes-mapping.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R5CR10EFZ9Z]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[af49e96e]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -234,6 +269,7 @@
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -284,7 +320,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
