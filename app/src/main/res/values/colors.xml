@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="tfe_color_primary">#ffa800</color>
-    <color name="tfe_color_primary_dark">#00FFFF</color>
+    <color name="tfe_color_primary_dark">#38a1e7</color>
     <color name="tfe_color_accent">#425066</color>
     <color name="colorAccent">#FF4081</color>
     <color name="red">#0088FF</color>
@@ -9,5 +9,5 @@
     <color name="white">#FFFFFF</color>
     <color name="green">#008000</color>
     <color name="darker_gray">#aaaaaa</color>
-    <color name="tfe_semi_transparent">#66000000</color>
+    <color name="tfe_semi_transparent">#00000000</color>
 </resources>

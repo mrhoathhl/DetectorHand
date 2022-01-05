@@ -26,21 +26,23 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button_bg"
                 android:src="@drawable/back2" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
                 android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
                     android:layout_marginTop="9dp"
+                    android:fontFamily="@font/light"
+                    android:gravity="center_vertical"
                     android:text="@string/challenge"
                     android:textColor="#ffffff"
-                    android:textSize="15sp"
-                    android:textStyle="normal" />
+                    android:textSize="10sp" />
 
                 <ImageButton
                     android:id="@+id/challengeBtn"
@@ -53,8 +55,15 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <RelativeLayout
+        <com.google.android.ads.nativetemplates.TemplateView
+            android:id="@+id/my_template"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:layout_below="@+id/toolbar"
+            app:gnt_template_type="@layout/gnt_small_template_view" />
+
+        <RelativeLayout
+            android:layout_below="@+id/my_template"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -68,15 +77,86 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="130dp"
                 app:srcCompat="@drawable/handbg"
                 tools:layout_editor_absoluteX="55dp"
                 tools:layout_editor_absoluteY="130dp" />
+
+            <RelativeLayout
+                android:id="@+id/showVirus"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_margin="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/virus"/>
+                    <ImageView
+                        android:layout_margin="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/virus"/>
+                    <ImageView
+                        android:layout_margin="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/virus"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/middle"
+                    android:layout_below="@+id/top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_margin="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/virus"/>
+                    <ImageView
+                        android:layout_margin="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/virus"/>
+                    <ImageView
+                        android:layout_margin="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/virus"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_below="@+id/middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_margin="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/virus"/>
+                    <ImageView
+                        android:layout_margin="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/virus"/>
+                    <ImageView
+                        android:layout_margin="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/virus"/>
+                </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -85,21 +165,16 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="100dp"
+                android:fontFamily="@font/light"
                 android:text="Spread your hand to check"
                 android:textAlignment="center"
                 android:textColor="@color/white" />
         </RelativeLayout>
-        <com.google.android.ads.nativetemplates.TemplateView
-            android:id="@+id/my_template"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@+id/toolbar"
-            app:gnt_template_type="@layout/gnt_small_template_view" />
 
         <RelativeLayout
-            android:layout_below="@+id/my_template"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/my_template"
             android:background="@drawable/shadowbg">
 
             <androidx.cardview.widget.CardView
@@ -125,72 +200,72 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
+                        android:fontFamily="@font/medium"
                         android:gravity="center"
                         android:text="Hand Scanning Result"
                         android:textAlignment="center"
                         android:textColor="#1076b8"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
+                        android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/percent"
+                        android:id="@+id/percentTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/title"
+                        android:fontFamily="@font/condensedbold"
                         android:gravity="center"
                         android:text="80%"
                         android:textAlignment="center"
                         android:textColor="#1076b8"
-                        android:textSize="75sp"
-                        android:textStyle="bold" />
+                        android:textSize="75sp" />
 
                     <TextView
-                        android:id="@+id/number_people"
+                        android:id="@+id/resultTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/percent"
-                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/percentTxt"
+                        android:fontFamily="@font/light"
                         android:gravity="center"
                         android:text="Your hand still have germs"
                         android:textAlignment="center"
                         android:textColor="#1076b8"
-                        android:textSize="18sp"
-                        android:textStyle="normal" />
+                        android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/cleanTxt"
+                        android:id="@+id/actionTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/number_people"
+                        android:layout_below="@+id/resultTxt"
                         android:layout_gravity="center|bottom"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/condensedbold"
                         android:text="Clean it!!!"
                         android:textAlignment="center"
                         android:textColor="#1076b8"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+                        android:textSize="22sp" />
 
                     <ImageButton
                         android:id="@+id/cleanBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/cleanTxt"
+                        android:layout_below="@+id/actionTxt"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/ok"
                         android:src="@drawable/ok"
-                        android:visibility="visible" />
+                        android:contentDescription="TODO" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
+
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+            app:adUnitId="@string/bannerId" />
 
 
     </RelativeLayout>

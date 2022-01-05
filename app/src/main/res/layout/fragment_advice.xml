@@ -37,7 +37,7 @@
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textSize="22sp"
-                android:textStyle="bold"
+                android:fontFamily="@font/condensedbold"
                 android:text="@string/advice" />
         </RelativeLayout>
 

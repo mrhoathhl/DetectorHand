@@ -28,28 +28,37 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.ImageReader.OnImageAvailableListener;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
+import java.util.Random;
 
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.customview.OverlayView;
-import com.monster.handscan.protecthealth.customview.OverlayView.DrawCallback;
+import com.monster.handscan.protecthealth.database.SQLiteDBHelper;
 import com.monster.handscan.protecthealth.env.BorderedText;
 import com.monster.handscan.protecthealth.env.ImageUtils;
 import com.monster.handscan.protecthealth.env.Logger;
 import com.monster.handscan.protecthealth.detection.tflite.Detector;
 import com.monster.handscan.protecthealth.detection.tflite.TFLiteObjectDetectionAPIModel;
+import com.monster.handscan.protecthealth.model.ScanHistoryModel;
 import com.monster.handscan.protecthealth.tracking.MultiBoxTracker;
 
 /**
@@ -77,6 +86,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
     Point sizeRect = new Point();
 
+    DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss", Locale.getDefault());
+    Random generator = new Random();
     private Detector detector;
 
     private long lastProcessingTimeMs;
@@ -92,9 +103,12 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     private Matrix cropToFrameTransform;
 
     private MultiBoxTracker tracker;
+    private RelativeLayout relativeLayout;
 
     private BorderedText borderedText;
     public CardView resultPopupCard;
+    private TextView percentTxt, resultTxt, actionTxt;
+    private String type;
 
     @Override
     public void onPreviewSizeChosen(final Size size, final int rotation) {
@@ -103,9 +117,12 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                         TypedValue.COMPLEX_UNIT_DIP, TEXT_SIZE_DIP, getResources().getDisplayMetrics());
         borderedText = new BorderedText(textSizePx);
         borderedText.setTypeface(Typeface.MONOSPACE);
-
-        tracker = new MultiBoxTracker(this);
-
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            type = extras.getString("type");
+            //The key argument here must match that used in the other activity
+        }
+        tracker = new MultiBoxTracker(this, getRelativeLayout());
         WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         int cropSize = TF_OD_API_INPUT_SIZE;
@@ -154,6 +171,37 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                     if (!isScanned && tracker.draw(canvas)) {
                         setScanned(true);
                         getResultPopupCard().setVisibility(View.VISIBLE);
+                        int value = generator.nextInt((100 - 50) + 1) + 50;
+                        getPercentTxt().setText(value + "%");
+                        if (value >= 50 && value <= 65) {
+                            getActionTxt().setText("Wash Your Hand, Now!!");
+                            getActionTxt().setTextColor(getResources().getColor(R.color.gnt_red));
+                            getPercentTxt().setTextColor(getResources().getColor(R.color.gnt_red));
+                            getResultTxt().setText("Your hand is full of germs");
+                        } else if (value > 65 && value <= 80) {
+                            getActionTxt().setText("Clean it.");
+                            getActionTxt().setTextColor(getResources().getColor(R.color.gnt_orange));
+                            getPercentTxt().setTextColor(getResources().getColor(R.color.gnt_orange));
+                            getResultTxt().setText("Your hand still have germs");
+                        } else if (value > 80) {
+                            getActionTxt().setText("Nice.");
+                            getActionTxt().setTextColor(getResources().getColor(R.color.gnt_green));
+                            getPercentTxt().setTextColor(getResources().getColor(R.color.gnt_green));
+                            getResultTxt().setText("Your hand is fully cleaned");
+                        }
+                        Calendar rightNow = Calendar.getInstance();
+                        String date = df.format(rightNow.getTime());
+                        SQLiteDBHelper sqLiteDBHelper = new SQLiteDBHelper(this);
+                        ScanHistoryModel scanHistoryModel = new ScanHistoryModel();
+                        scanHistoryModel.setPercent(value + "%");
+                        scanHistoryModel.setTime(date);
+                        scanHistoryModel.setDay(rightNow.get(Calendar.HOUR_OF_DAY) < 12);
+                        scanHistoryModel.setNight(rightNow.get(Calendar.HOUR_OF_DAY) > 12);
+                        if (type.equalsIgnoreCase("normal")) {
+                            sqLiteDBHelper.addScanHistory(scanHistoryModel);
+                        } else {
+                            sqLiteDBHelper.addChallengeHistory(scanHistoryModel);
+                        }
                     }
                 });
 
@@ -172,7 +220,6 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
             return;
         }
         computingDetection = true;
-        LOGGER.i("Preparing image " + currTimestamp + " for detection in bg thread.");
 
         rgbFrameBitmap.setPixels(getRgbBytes(), 0, previewWidth, 0, 0, previewWidth, previewHeight);
 
@@ -189,7 +236,6 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                 new Runnable() {
                     @Override
                     public void run() {
-                        LOGGER.i("Running detection on image " + currTimestamp);
                         final long startTime = SystemClock.uptimeMillis();
                         final List<Detector.Recognition> results = detector.recognizeImage(croppedBitmap);
                         lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
@@ -276,13 +322,52 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                     try {
                         detector.setUseNNAPI(isChecked);
                     } catch (UnsupportedOperationException e) {
-                        LOGGER.e(e, "Failed to set \"Use NNAPI\".");
                         runOnUiThread(
                                 () -> {
-                                    Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                 });
                     }
                 });
+    }
+
+    @Override
+    public TextView getPercentTxt() {
+        return this.percentTxt;
+    }
+
+    @Override
+    public void setPercentTxt(TextView percentTxt) {
+        this.percentTxt = percentTxt;
+    }
+
+    @Override
+    public TextView getResultTxt() {
+        return this.resultTxt;
+    }
+
+    @Override
+    public void setResultTxt(TextView resultTxt) {
+        this.resultTxt = resultTxt;
+    }
+
+    @Override
+    public TextView getActionTxt() {
+        return this.actionTxt;
+    }
+
+    @Override
+    public void setActionTxt(TextView actionTxt) {
+        this.actionTxt = actionTxt;
+    }
+
+    @Override
+    public RelativeLayout getRelativeLayout() {
+        return this.relativeLayout;
+    }
+
+    @Override
+    public void setRelativeLayout(RelativeLayout relativeLayout) {
+        this.relativeLayout = relativeLayout;
     }
 
     @Override

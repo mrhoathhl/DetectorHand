@@ -1,66 +1,105 @@
 package com.monster.handscan.protecthealth.fragment;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.ImageButton;
+import android.widget.RatingBar;
+import android.widget.TextView;
 
 import com.monster.handscan.protecthealth.R;
+import com.monster.handscan.protecthealth.activity.MainActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class SettingFragment extends Fragment {
+public class SettingFragment extends Fragment implements View.OnClickListener {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public SettingFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SettingFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SettingFragment newInstance(String param1, String param2) {
-        SettingFragment fragment = new SettingFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private ImageButton rateBtn, policyBtn, backBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+        View view = inflater.inflate(R.layout.fragment_setting, container, false);
+        rateBtn = (ImageButton) view.findViewById(R.id.rateBtn);
+        policyBtn = (ImageButton) view.findViewById(R.id.policyBtn);
+        backBtn = (ImageButton) view.findViewById(R.id.backBtn);
+
+        rateBtn.setOnClickListener(this);
+        policyBtn.setOnClickListener(this);
+        backBtn.setOnClickListener(this);
+        return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.rateBtn:
+                openRatingDialog();
+                break;
+            case R.id.policyBtn:
+                break;
+            case R.id.backBtn:
+                ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
+                    @Override
+                    public void onGameInterstitialClosed() {
+                        getActivity().onBackPressed();
+                    }
+
+                    @Override
+                    public void onGameInterstitialShowFailed() {
+                        getActivity().onBackPressed();
+                    }
+                });
+                break;
+        }
+    }
+
+    public void openRatingDialog() {
+        final Dialog dialog = new Dialog(requireActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.dialog_rating_custom);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+        RatingBar ratingBar = dialog.findViewById(R.id.rating_bar);
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                final String appPackageName = "com.monster.handscan.protecthealth"; // getPackageName() from Context or Activity object
+                try {
+                    requireActivity().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    try {
+                        requireActivity().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                    } catch (Exception e) {
+                        Log.e("error", e.getLocalizedMessage());
+                    } finally {
+                        dialog.dismiss();
+                    }
+                } catch (Exception ignored) {
+                    Log.e("error", ignored.getLocalizedMessage());
+                } finally {
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        dialog.show();
     }
 }

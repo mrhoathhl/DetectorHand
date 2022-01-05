@@ -29,8 +29,12 @@ import android.text.TextUtils;
 import android.util.Pair;
 import android.util.TypedValue;
 import android.view.Display;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
+import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.env.BorderedText;
 import com.monster.handscan.protecthealth.env.ImageUtils;
 import com.monster.handscan.protecthealth.env.Logger;
@@ -75,11 +79,13 @@ public class MultiBoxTracker {
     private int frameWidth;
     private int frameHeight;
     private int sensorOrientation;
+    Context context;
     Point size = new Point();
     int width = 0;
     int height = 0;
+    RelativeLayout relativeLayout;
 
-    public MultiBoxTracker(final Context context) {
+    public MultiBoxTracker(final Context context, RelativeLayout relativeLayout) {
         for (final int color : COLORS) {
             availableColors.add(color);
         }
@@ -88,7 +94,8 @@ public class MultiBoxTracker {
         display.getSize(size);
         width = size.x;
         height = size.y;
-
+        this.context = context;
+        this.relativeLayout = relativeLayout;
         boxPaint.setColor(Color.RED);
         boxPaint.setStyle(Style.STROKE);
         boxPaint.setStrokeWidth(10.0f);
@@ -128,7 +135,6 @@ public class MultiBoxTracker {
     }
 
     public synchronized void trackResults(final List<Recognition> results, final long timestamp) {
-        logger.i("Processing %d results from %d", results.size(), timestamp);
         processResults(results);
     }
 
@@ -159,22 +165,19 @@ public class MultiBoxTracker {
                             ? String.format("%s %.2f", trackedObjects.get(0).title, (100 * trackedObjects.get(0).detectionConfidence))
                             : String.format("%.2f", (100 * trackedObjects.get(0).detectionConfidence));
 
+            relativeLayout.setVisibility(View.INVISIBLE);
             if (labelString.contains("person")) {
-                logger.i("contain");
                 logger.i("contain " + (trackedPos.width() / width) * 100);
-                if ((trackedPos.width() / width) * 100 > 30 || (trackedPos.height() / height) * 100 > 30) {
-                    getFrameToCanvasMatrix().mapRect(trackedPos);
-                    boxPaint.setColor(trackedObjects.get(0).color);
+                logger.i("contain s " + (100 * trackedObjects.get(0).detectionConfidence));
+                getFrameToCanvasMatrix().mapRect(trackedPos);
+                boxPaint.setColor(trackedObjects.get(0).color);
+                float cornerSize = Math.min(trackedPos.width(), trackedPos.height()) / 8.0f;
+                canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint);
+                relativeLayout.setVisibility(View.VISIBLE);
+                relativeLayout.setX(trackedPos.width() / 2);
+                relativeLayout.setX(trackedPos.height() / 2);
 
-                    float cornerSize = Math.min(trackedPos.width(), trackedPos.height()) / 8.0f;
-                    canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint);
-                    try {
-                        Thread.sleep(1000);
-                        return true;
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
+                return (100 * trackedObjects.get(0).detectionConfidence) >= 65 && (trackedPos.width() / width) * 100 >= 65;
             }
         }
         return false;

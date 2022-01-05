@@ -22,6 +22,7 @@ import com.monster.handscan.protecthealth.activity.MainActivity;
 
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.activity.DetectorActivity;
+import com.monster.handscan.protecthealth.utils.StringUtil;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
@@ -46,13 +47,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         adviceBtn = view.findViewById(R.id.adviceBtn);
         scanBtn = view.findViewById(R.id.scanBtn);
 
-        AdLoader adLoader = new AdLoader.Builder(getContext(), "ca-app-pub-3940256099942544/2247696110")
+        AdLoader adLoader = new AdLoader.Builder(getContext(), StringUtil.NATIVE_ID)
                 .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                     @Override
                     public void onNativeAdLoaded(NativeAd nativeAd) {
                         NativeTemplateStyle styles = new
                                 NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(10000)).build();
-                        TemplateView template =view.findViewById(R.id.my_template);
+                        TemplateView template = view.findViewById(R.id.my_template);
                         template.setStyles(styles);
                         template.setNativeAd(nativeAd);
                     }
@@ -69,26 +70,60 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        MainActivity.self().appOpenManager.showAdIfAvailable();
+    }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.settingBtn:
-                ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
-                break;
-            case R.id.challenge:
-                ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
-                break;
-            case R.id.historyBtn:
-                ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
-                break;
-            case R.id.adviceBtn:
-                ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
-                break;
-            case R.id.scanBtn:
-                Intent intent = new Intent(getContext(), DetectorActivity.class);
-                requireActivity().startActivity(intent);
-                break;
-        }
+        ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
+            @Override
+            public void onGameInterstitialClosed() {
+                switch (v.getId()) {
+                    case R.id.settingBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
+                        break;
+                    case R.id.challenge:
+                        ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
+                        break;
+                    case R.id.historyBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
+                        break;
+                    case R.id.adviceBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
+                        break;
+                    case R.id.scanBtn:
+                        Intent intent = new Intent(getContext(), DetectorActivity.class);
+                        intent.putExtra("type", "normal");
+                        requireActivity().startActivity(intent);
+                        break;
+                }
+            }
+
+            @Override
+            public void onGameInterstitialShowFailed() {
+                switch (v.getId()) {
+                    case R.id.settingBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
+                        break;
+                    case R.id.challenge:
+                        ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
+                        break;
+                    case R.id.historyBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
+                        break;
+                    case R.id.adviceBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
+                        break;
+                    case R.id.scanBtn:
+                        Intent intent = new Intent(getContext(), DetectorActivity.class);
+                        intent.putExtra("type", "normal");
+                        requireActivity().startActivity(intent);
+                        break;
+                }
+            }
+        });
     }
 }

@@ -21,21 +21,21 @@
             android:name="com.monster.handscan.protecthealth.activity.SplashActivity"
             android:label="@string/title_activity_splash"
             android:theme="@style/AppTheme.ObjectDetection.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.monster.handscan.protecthealth.activity.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.ObjectDetection.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.monster.handscan.protecthealth.activity.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.ObjectDetection.NoActionBar">
-        </activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-9085952480111777~6740306233"/>
         <activity
             android:name="com.monster.handscan.protecthealth.activity.DetectorActivity"
             android:label="@string/app_name">

@@ -10,15 +10,16 @@ import android.widget.ImageView;
 
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.model.DayChallengeModel;
+import com.monster.handscan.protecthealth.model.ScanHistoryModel;
 
 import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
-    private List<DayChallengeModel> listData;
+    private List<ScanHistoryModel> listData;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public ListViewAdapter(Context aContext,  List<DayChallengeModel> listData) {
+    public ListViewAdapter(Context aContext,  List<ScanHistoryModel> listData) {
         this.context = aContext;
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
@@ -52,7 +53,7 @@ public class ListViewAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        DayChallengeModel country = this.listData.get(position);
+        ScanHistoryModel country = this.listData.get(position);
 
         holder.dayLabel.setImageResource(country.getDayLabel());
         if (country.isDay()) {

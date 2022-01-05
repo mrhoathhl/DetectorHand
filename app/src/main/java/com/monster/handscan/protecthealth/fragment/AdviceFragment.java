@@ -21,8 +21,10 @@ import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.nativead.NativeAd;
 import com.monster.handscan.protecthealth.R;
+import com.monster.handscan.protecthealth.activity.MainActivity;
 import com.monster.handscan.protecthealth.adapters.ViewPagerAdapter;
 import com.monster.handscan.protecthealth.model.AdviceModel;
+import com.monster.handscan.protecthealth.utils.StringUtil;
 
 
 import java.util.ArrayList;
@@ -50,9 +52,20 @@ public class AdviceFragment extends Fragment {
         layout_dot = (LinearLayout) view.findViewById(R.id.layout_dot);
         backBtn = (ImageButton) view.findViewById(R.id.backBtn);
 
-        backBtn.setOnClickListener(view1 -> requireActivity().onBackPressed());
+        backBtn.setOnClickListener(view1 ->
+                ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
+                    @Override
+                    public void onGameInterstitialClosed() {
+                        getActivity().onBackPressed();
+                    }
 
-        AdLoader adLoader = new AdLoader.Builder(requireActivity(), "ca-app-pub-3940256099942544/2247696110")
+                    @Override
+                    public void onGameInterstitialShowFailed() {
+                        getActivity().onBackPressed();
+                    }
+                }));
+
+        AdLoader adLoader = new AdLoader.Builder(requireActivity(), StringUtil.APP_OPEN_ID)
                 .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                     @Override
                     public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {

@@ -45,6 +45,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,6 +63,7 @@ import com.monster.handscan.protecthealth.fragment.CameraConnectionFragment;
 import com.monster.handscan.protecthealth.fragment.LegacyCameraConnectionFragment;
 import com.monster.handscan.protecthealth.env.ImageUtils;
 import com.monster.handscan.protecthealth.env.Logger;
+import com.monster.handscan.protecthealth.utils.StringUtil;
 
 public abstract class CameraActivity extends AppCompatActivity
         implements OnImageAvailableListener,
@@ -89,6 +91,8 @@ public abstract class CameraActivity extends AppCompatActivity
     private ImageButton backBtn, challengeBtn, okBtn;
     private CardView resultPopupCard;
     private boolean isScanned;
+    private TextView percentTxt, resultTxt, actionTxt;
+    private RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -108,23 +112,29 @@ public abstract class CameraActivity extends AppCompatActivity
         challengeBtn = (ImageButton) findViewById(R.id.challengeBtn);
         okBtn = (ImageButton) findViewById(R.id.cleanBtn);
 
+        percentTxt = (TextView) findViewById(R.id.percentTxt);
+        resultTxt = (TextView) findViewById(R.id.resultTxt);
+        actionTxt = (TextView) findViewById(R.id.actionTxt);
+        relativeLayout = (RelativeLayout) findViewById(R.id.showVirus);
+
         backBtn.setOnClickListener(this);
         challengeBtn.setOnClickListener(this);
         okBtn.setOnClickListener(this);
 
         resultPopupCard = (CardView) findViewById(R.id.resultPopup);
         setResultPopupCard(resultPopupCard);
+        setPercentTxt(percentTxt);
+        setResultTxt(resultTxt);
+        setActionTxt(actionTxt);
+        setRelativeLayout(relativeLayout);
 
-        AdLoader adLoader = new AdLoader.Builder(this, "ca-app-pub-3940256099942544/2247696110")
-                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                    @Override
-                    public void onNativeAdLoaded(NativeAd nativeAd) {
-                        NativeTemplateStyle styles = new
-                                NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(10000)).build();
-                        TemplateView template = findViewById(R.id.my_template);
-                        template.setStyles(styles);
-                        template.setNativeAd(nativeAd);
-                    }
+        AdLoader adLoader = new AdLoader.Builder(this, StringUtil.NATIVE_ID)
+                .forNativeAd(nativeAd -> {
+                    NativeTemplateStyle styles = new
+                            NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(10000)).build();
+                    TemplateView template = findViewById(R.id.my_template);
+                    template.setStyles(styles);
+                    template.setNativeAd(nativeAd);
                 })
                 .build();
 
@@ -146,8 +156,10 @@ public abstract class CameraActivity extends AppCompatActivity
             this.onBackPressed();
         } else if (v.getId() == R.id.cleanBtn) {
             resultPopupCard.setVisibility(View.INVISIBLE);
+            this.onBackPressed();
             setScanned(false);
         } else if (v.getId() == R.id.challengeBtn) {
+            this.onBackPressed();
         }
     }
 
@@ -349,8 +361,8 @@ public abstract class CameraActivity extends AppCompatActivity
             if (shouldShowRequestPermissionRationale(PERMISSION_CAMERA)) {
                 Toast.makeText(
                         CameraActivity.this,
-                        "Camera permission is required for this demo",
-                        Toast.LENGTH_LONG)
+                        "Camera permission is required for this app",
+                        Toast.LENGTH_SHORT)
                         .show();
             }
             requestPermissions(new String[]{PERMISSION_CAMERA}, PERMISSIONS_REQUEST);
@@ -493,4 +505,20 @@ public abstract class CameraActivity extends AppCompatActivity
     protected abstract void setNumThreads(int numThreads);
 
     protected abstract void setUseNNAPI(boolean isChecked);
+
+    public abstract TextView getPercentTxt();
+
+    public abstract void setPercentTxt(TextView percentTxt);
+
+    public abstract TextView getResultTxt();
+
+    public abstract void setResultTxt(TextView resultTxt);
+
+    public abstract TextView getActionTxt();
+
+    public abstract void setActionTxt(TextView actionTxt);
+
+    public abstract RelativeLayout getRelativeLayout();
+
+    public abstract void setRelativeLayout(RelativeLayout relativeLayout);
 }

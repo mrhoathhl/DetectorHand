@@ -6,6 +6,7 @@ color gnt_black
 color gnt_blue
 color gnt_gray
 color gnt_green
+color gnt_orange
 color gnt_outline
 color gnt_red
 color gnt_test_background_color
