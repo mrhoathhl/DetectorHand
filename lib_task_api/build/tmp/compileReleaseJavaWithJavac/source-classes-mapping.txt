@@ -1,0 +1,7 @@
+com/monster/handscan/protecthealth/detection/tflite/TFLiteObjectDetectionAPIModel.java
+ com.monster.handscan.protecthealth.detection.tflite.TFLiteObjectDetectionAPIModel
+com/monster/handscan/protecthealth/detection/tflite/Detector.java
+ com.monster.handscan.protecthealth.detection.tflite.Detector
+ com.monster.handscan.protecthealth.detection.tflite.Detector$Recognition
+com/monster/handscan/protecthealth/tflite/BuildConfig.java
+ com.monster.handscan.protecthealth.tflite.BuildConfig

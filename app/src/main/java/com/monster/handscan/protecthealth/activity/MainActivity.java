@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        SharedPrefsManager.getInstance().putLong("lastShow", 0);
     }
 
     public static MainActivity self() {
@@ -70,7 +71,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction1 = fragmentManager.beginTransaction();
         fragmentTransaction1.replace(R.id.mainContainer, fragment);
         fragmentTransaction1.addToBackStack(null);
-        fragmentTransaction1.commit();
+        fragmentTransaction1.commitAllowingStateLoss();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("WORKAROUND_FOR_BUG_19917_KEY", "WORKAROUND_FOR_BUG_19917_VALUE");
+        super.onSaveInstanceState(outState);
     }
 
     public void showInterstitial(OnInterstitialListener listener) {
@@ -86,6 +93,12 @@ public class MainActivity extends AppCompatActivity {
             }
 //            Toast.makeText(this, "Ad did not load", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        showInterstitial(null);
     }
 
     public void loadAd() {

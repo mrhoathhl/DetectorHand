@@ -84,6 +84,8 @@ public class MultiBoxTracker {
     int width = 0;
     int height = 0;
     RelativeLayout relativeLayout;
+    int timeCheck = 0;
+    private boolean isChecked = false;
 
     public MultiBoxTracker(final Context context, RelativeLayout relativeLayout) {
         for (final int color : COLORS) {
@@ -143,7 +145,7 @@ public class MultiBoxTracker {
     }
 
     public synchronized boolean draw(final Canvas canvas) {
-        final boolean rotated = sensorOrientation % 180 == 90;
+        final boolean rotated = sensorOrientation % 180 == 180;
         final float multiplier =
                 Math.min(
                         canvas.getHeight() / (float) (rotated ? frameWidth : frameHeight),
@@ -166,18 +168,24 @@ public class MultiBoxTracker {
                             : String.format("%.2f", (100 * trackedObjects.get(0).detectionConfidence));
 
             relativeLayout.setVisibility(View.INVISIBLE);
-            if (labelString.contains("person")) {
+            logger.i("contain " + labelString);
+            if (trackedObjects.get(0).title.equalsIgnoreCase("person")) {
+                relativeLayout.setVisibility(View.VISIBLE);
                 logger.i("contain " + (trackedPos.width() / width) * 100);
                 logger.i("contain s " + (100 * trackedObjects.get(0).detectionConfidence));
                 getFrameToCanvasMatrix().mapRect(trackedPos);
                 boxPaint.setColor(trackedObjects.get(0).color);
                 float cornerSize = Math.min(trackedPos.width(), trackedPos.height()) / 8.0f;
                 canvas.drawRoundRect(trackedPos, cornerSize, cornerSize, boxPaint);
-                relativeLayout.setVisibility(View.VISIBLE);
-                relativeLayout.setX(trackedPos.width() / 2 - 70);
+                relativeLayout.setX(trackedPos.width() / 2 - 100);
                 relativeLayout.setY(trackedPos.height() / 2 - 70);
-
-                return (100 * trackedObjects.get(0).detectionConfidence) >= 65 && (trackedPos.width() / width) * 100 >= 65;
+                if ((100 * trackedObjects.get(0).detectionConfidence) >= 45) {
+                    timeCheck++;
+                    if(timeCheck > 50) {
+                        isChecked = true;
+                    }
+                }
+                return isChecked;
             }
         }
         return false;

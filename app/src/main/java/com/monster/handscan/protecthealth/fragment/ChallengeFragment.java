@@ -149,21 +149,10 @@ public class ChallengeFragment extends Fragment implements View.OnClickListener 
 //                SharedPrefsManager.getInstance().putBoolean("confirmCard", true);
                 break;
             case R.id.scanBtn:
-                ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
-                    @Override
-                    public void onGameInterstitialClosed() {
-                        Intent intent = new Intent(getActivity(), DetectorActivity.class);
-                        intent.putExtra("type", "challenge");
-                        requireActivity().startActivity(intent);
-                    }
+                Intent intent = new Intent(getActivity(), DetectorActivity.class);
+                intent.putExtra("type", "challenge");
+                requireActivity().startActivity(intent);
 
-                    @Override
-                    public void onGameInterstitialShowFailed() {
-                        Intent intent = new Intent(getActivity(), DetectorActivity.class);
-                        intent.putExtra("type", "challenge");
-                        requireActivity().startActivity(intent);
-                    }
-                });
                 break;
         }
 

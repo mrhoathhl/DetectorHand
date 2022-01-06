@@ -26,7 +26,7 @@ import com.monster.handscan.protecthealth.utils.StringUtil;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    ImageButton settingBtn, noticeBtn, historyBtn, adviceBtn, scanBtn;
+    ImageButton settingBtn, noticeBtn, historyBtn, adviceBtn, scanBtn, objectBtn;
     FragmentManager fragmentManager;
 
     @Override
@@ -46,6 +46,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         historyBtn = view.findViewById(R.id.historyBtn);
         adviceBtn = view.findViewById(R.id.adviceBtn);
         scanBtn = view.findViewById(R.id.scanBtn);
+        objectBtn = view.findViewById(R.id.objectBtn);
 
         AdLoader adLoader = new AdLoader.Builder(getContext(), StringUtil.NATIVE_ID)
                 .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
@@ -67,6 +68,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         historyBtn.setOnClickListener(this);
         adviceBtn.setOnClickListener(this);
         scanBtn.setOnClickListener(this);
+        objectBtn.setOnClickListener(this);
         return view;
     }
 
@@ -78,52 +80,54 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
-            @Override
-            public void onGameInterstitialClosed() {
-                switch (v.getId()) {
-                    case R.id.settingBtn:
-                        ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
-                        break;
-                    case R.id.challenge:
-                        ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
-                        break;
-                    case R.id.historyBtn:
-                        ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
-                        break;
-                    case R.id.adviceBtn:
-                        ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
-                        break;
-                    case R.id.scanBtn:
-                        Intent intent = new Intent(getContext(), DetectorActivity.class);
-                        intent.putExtra("type", "normal");
-                        requireActivity().startActivity(intent);
-                        break;
+        if (v.getId() == R.id.scanBtn) {
+            Intent intent = new Intent(getContext(), DetectorActivity.class);
+            intent.putExtra("type", "normal");
+            requireActivity().startActivity(intent);
+        } else {
+            ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
+                @Override
+                public void onGameInterstitialClosed() {
+                    switch (v.getId()) {
+                        case R.id.settingBtn:
+                            ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
+                            break;
+                        case R.id.challenge:
+                            ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
+                            break;
+                        case R.id.historyBtn:
+                            ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
+                            break;
+                        case R.id.adviceBtn:
+                            ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
+                            break;
+                        case R.id.objectBtn:
+                            ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
+                            break;
+                    }
                 }
-            }
 
-            @Override
-            public void onGameInterstitialShowFailed() {
-                switch (v.getId()) {
-                    case R.id.settingBtn:
-                        ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
-                        break;
-                    case R.id.challenge:
-                        ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
-                        break;
-                    case R.id.historyBtn:
-                        ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
-                        break;
-                    case R.id.adviceBtn:
-                        ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
-                        break;
-                    case R.id.scanBtn:
-                        Intent intent = new Intent(getContext(), DetectorActivity.class);
-                        intent.putExtra("type", "normal");
-                        requireActivity().startActivity(intent);
-                        break;
+                @Override
+                public void onGameInterstitialShowFailed() {
+                    switch (v.getId()) {
+                        case R.id.settingBtn:
+                            ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
+                            break;
+                        case R.id.challenge:
+                            ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
+                            break;
+                        case R.id.historyBtn:
+                            ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
+                            break;
+                        case R.id.adviceBtn:
+                            ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
+                            break;
+                        case R.id.objectBtn:
+                            ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
+                            break;
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 }

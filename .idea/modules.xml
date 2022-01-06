@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TFLite_Object_Detection_Demo_App.iml" filepath="$PROJECT_DIR$/.idea/modules/TFLite_Object_Detection_Demo_App.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TFLite_Object_Detection_Demo_App.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TFLite_Object_Detection_Demo_App.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_interpreter/TFLite_Object_Detection_Demo_App.lib_interpreter.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_interpreter/TFLite_Object_Detection_Demo_App.lib_interpreter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_task_api/TFLite_Object_Detection_Demo_App.lib_task_api.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_task_api/TFLite_Object_Detection_Demo_App.lib_task_api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nativetemplates/TFLite_Object_Detection_Demo_App.nativetemplates.iml" filepath="$PROJECT_DIR$/.idea/modules/nativetemplates/TFLite_Object_Detection_Demo_App.nativetemplates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Detector_Hand.iml" filepath="$PROJECT_DIR$/.idea/modules/Detector_Hand.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Detector_Hand.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Detector_Hand.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_interpreter/Detector_Hand.lib_interpreter.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_interpreter/Detector_Hand.lib_interpreter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_task_api/Detector_Hand.lib_task_api.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_task_api/Detector_Hand.lib_task_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nativetemplates/Detector_Hand.nativetemplates.iml" filepath="$PROJECT_DIR$/.idea/modules/nativetemplates/Detector_Hand.nativetemplates.iml" />
     </modules>
   </component>
 </project>

@@ -168,39 +168,42 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
         trackingOverlay = (OverlayView) findViewById(R.id.tracking_overlay);
         trackingOverlay.addCallback(
                 canvas -> {
-                    if (!isScanned && tracker.draw(canvas)) {
+                    if (!isScanned() && tracker.draw(canvas)) {
+                        tracker.drawDebug(canvas);
                         setScanned(true);
-                        getResultPopupCard().setVisibility(View.VISIBLE);
-                        int value = generator.nextInt((100 - 50) + 1) + 50;
-                        getPercentTxt().setText(value + "%");
-                        if (value >= 50 && value <= 65) {
-                            getActionTxt().setText("Wash Your Hand, Now!!");
-                            getActionTxt().setTextColor(getResources().getColor(R.color.gnt_red));
-                            getPercentTxt().setTextColor(getResources().getColor(R.color.gnt_red));
-                            getResultTxt().setText("Your hand is full of germs");
-                        } else if (value > 65 && value <= 80) {
-                            getActionTxt().setText("Clean it.");
-                            getActionTxt().setTextColor(getResources().getColor(R.color.gnt_orange));
-                            getPercentTxt().setTextColor(getResources().getColor(R.color.gnt_orange));
-                            getResultTxt().setText("Your hand still have germs");
-                        } else if (value > 80) {
-                            getActionTxt().setText("Nice.");
-                            getActionTxt().setTextColor(getResources().getColor(R.color.gnt_green));
-                            getPercentTxt().setTextColor(getResources().getColor(R.color.gnt_green));
-                            getResultTxt().setText("Your hand is fully cleaned");
-                        }
-                        Calendar rightNow = Calendar.getInstance();
-                        String date = df.format(rightNow.getTime());
-                        SQLiteDBHelper sqLiteDBHelper = new SQLiteDBHelper(this);
-                        ScanHistoryModel scanHistoryModel = new ScanHistoryModel();
-                        scanHistoryModel.setPercent(value + "%");
-                        scanHistoryModel.setTime(date);
-                        scanHistoryModel.setDay(rightNow.get(Calendar.HOUR_OF_DAY) < 12);
-                        scanHistoryModel.setNight(rightNow.get(Calendar.HOUR_OF_DAY) > 12);
-                        if (type.equalsIgnoreCase("normal")) {
-                            sqLiteDBHelper.addScanHistory(scanHistoryModel);
-                        } else {
-                            sqLiteDBHelper.addChallengeHistory(scanHistoryModel);
+                        if (getResultPopupCard().getVisibility() == View.INVISIBLE) {
+                            getResultPopupCard().setVisibility(View.VISIBLE);
+                            int value = generator.nextInt((100 - 50) + 1) + 50;
+                            getPercentTxt().setText(value + "%");
+                            if (value >= 50 && value <= 65) {
+                                getActionTxt().setText("Wash Your Hand, Now!!");
+                                getActionTxt().setTextColor(getResources().getColor(R.color.gnt_red));
+                                getPercentTxt().setTextColor(getResources().getColor(R.color.gnt_red));
+                                getResultTxt().setText("Your hand is full of germs");
+                            } else if (value > 65 && value <= 80) {
+                                getActionTxt().setText("Clean it.");
+                                getActionTxt().setTextColor(getResources().getColor(R.color.gnt_orange));
+                                getPercentTxt().setTextColor(getResources().getColor(R.color.gnt_orange));
+                                getResultTxt().setText("Your hand still have germs");
+                            } else if (value > 80) {
+                                getActionTxt().setText("Nice.");
+                                getActionTxt().setTextColor(getResources().getColor(R.color.gnt_green));
+                                getPercentTxt().setTextColor(getResources().getColor(R.color.gnt_green));
+                                getResultTxt().setText("Your hand is fully cleaned");
+                            }
+                            Calendar rightNow = Calendar.getInstance();
+                            String date = df.format(rightNow.getTime());
+                            SQLiteDBHelper sqLiteDBHelper = new SQLiteDBHelper(this);
+                            ScanHistoryModel scanHistoryModel = new ScanHistoryModel();
+                            scanHistoryModel.setPercent(value + "%");
+                            scanHistoryModel.setTime(date);
+                            scanHistoryModel.setDay(rightNow.get(Calendar.HOUR_OF_DAY) < 12);
+                            scanHistoryModel.setNight(rightNow.get(Calendar.HOUR_OF_DAY) > 12);
+                            if (type.equalsIgnoreCase("normal")) {
+                                sqLiteDBHelper.addScanHistory(scanHistoryModel);
+                            } else {
+                                sqLiteDBHelper.addChallengeHistory(scanHistoryModel);
+                            }
                         }
                     }
                 });

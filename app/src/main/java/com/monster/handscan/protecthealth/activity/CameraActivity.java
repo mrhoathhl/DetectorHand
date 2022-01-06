@@ -155,9 +155,7 @@ public abstract class CameraActivity extends AppCompatActivity
         if (v.getId() == R.id.backBtn) {
             this.onBackPressed();
         } else if (v.getId() == R.id.cleanBtn) {
-            resultPopupCard.setVisibility(View.INVISIBLE);
             this.onBackPressed();
-            setScanned(false);
         } else if (v.getId() == R.id.challengeBtn) {
             this.onBackPressed();
         }
