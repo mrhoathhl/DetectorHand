@@ -31,14 +31,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fc5db4c-ca7d-470a-826f-dd88845b3fde" name="Default Changelist" comment="complete. increase accuracy">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[fee0d857]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R5CR10EFZ9Z]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -70,7 +70,6 @@
     <option name="KEY_STORE_PATH" value="C:\Users\mrhoa\AndroidStudioProjects\DetectorHand\Scan.jks" />
     <option name="KEY_ALIAS" value="key0" />
     <option name="REMEMBER_PASSWORDS" value="true" />
-    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,8 +83,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ApkExportedModule" value="TFLite_Object_Detection_Demo_App.app" />
-    <property name="BundleExportedModule" value="TFLite_Object_Detection_Demo_App.app" />
+    <property name="ApkExportedModule" value="Detector_Hand.app" />
+    <property name="BundleExportedModule" value="Detector_Hand.app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R5CR10EFZ9Z" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2022-01-05T10:52:39.763Z" />
     <property name="ExportApk.ApkPath" value="C:\Users\mrhoa\AndroidStudioProjects\DetectorHand\app" />
@@ -209,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641453517478</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="complete. increase accuracy">
+      <created>1641453586010</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641453586010</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,30 +264,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641452087157" />
-    <state width="1877" height="239" key="GridCell.Tab.0.bottom" timestamp="1641452532245">
+    <state width="1877" height="359" key="GridCell.Tab.0.bottom" timestamp="1641453651716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641452532245" />
-    <state width="1877" height="239" key="GridCell.Tab.0.center" timestamp="1641452532245">
+    <state width="1877" height="359" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641453651716" />
+    <state width="1877" height="359" key="GridCell.Tab.0.center" timestamp="1641453651716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641452532245" />
-    <state width="1877" height="239" key="GridCell.Tab.0.left" timestamp="1641452532245">
+    <state width="1877" height="359" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641453651716" />
+    <state width="1877" height="359" key="GridCell.Tab.0.left" timestamp="1641453651716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641452532245" />
-    <state width="1877" height="239" key="GridCell.Tab.0.right" timestamp="1641452532245">
+    <state width="1877" height="359" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641453651716" />
+    <state width="1877" height="359" key="GridCell.Tab.0.right" timestamp="1641453651716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641452532245" />
+    <state width="1877" height="359" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641453651716" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1641355547194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641355547194" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1641453524708">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1641453634031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641453524708" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1641453634031" />
     <state x="776" y="297" key="chooseDestDirectoryDialog" timestamp="1641381730681">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
