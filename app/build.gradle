@@ -4,7 +4,7 @@ apply plugin: 'de.undercouch.download'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.monster.handscan.protecthealth"
+        applicationId "com.matrixone.handscan.protecthealth"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
