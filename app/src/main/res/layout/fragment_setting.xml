@@ -14,7 +14,7 @@
         <RelativeLayout
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -22,8 +22,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button_bg"
                 android:src="@drawable/back2" />
 
@@ -32,9 +32,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="9dp"
+                android:layout_marginTop="18dp"
                 android:fontFamily="@font/condensedbold"
-                android:text="@string/challenge"
+                android:text="@string/settings"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textSize="22sp" />
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/my_template"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="80dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -67,7 +67,7 @@
                 android:id="@+id/policyBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/button_bg"
                 android:src="@drawable/policy" />
         </LinearLayout>
