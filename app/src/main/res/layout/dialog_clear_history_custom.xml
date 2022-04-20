@@ -16,10 +16,10 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="165dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="15dp">
 
@@ -32,53 +32,77 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/condensedbold"
-                    android:text="History"
-                    android:textColor="#076ab2"
+                    android:gravity="center"
+                    android:text="Clear history"
+                    android:textColor="@color/darkblue"
                     android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/questuio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:layout_below="@+id/title"
                     android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/light"
-                    android:text="Do you really want to clear history"
-                    android:textColor="#076ab2" />
+                    android:text="Do you want to clear your scanning history?"
+                    android:textColor="@color/darkblue" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/questuio"
-                    android:gravity="end"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/dismiss"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/condensedbold"
-                        android:text="No"
-                        android:textColor="#076ab2"
-                        android:textSize="25sp" />
+                        android:layout_alignParentStart="true"
+                        android:background="@drawable/button_bg"
+                        android:src="@drawable/cancel" />
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/confirm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:fontFamily="@font/condensedbold"
-                        android:text="Yes"
-                        android:textColor="#076ab2"
-                        android:textSize="25sp" />
-                </LinearLayout>
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/button_bg"
+                        android:src="@drawable/clear" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/dismiss"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="30dp"-->
+                    <!--                        android:layout_marginTop="20dp"-->
+                    <!--                        android:fontFamily="@font/condensedbold"-->
+                    <!--                        android:text="No"-->
+                    <!--                        android:textColor="@color/darkblue"-->
+                    <!--                        android:textSize="25sp" />-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/confirm"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="30dp"-->
+                    <!--                        android:layout_marginTop="20dp"-->
+                    <!--                        android:layout_marginEnd="20dp"-->
+                    <!--                        android:fontFamily="@font/condensedbold"-->
+                    <!--                        android:text="Yes"-->
+                    <!--                        android:textColor="@color/darkblue"-->
+                    <!--                        android:textSize="25sp" />-->
+                </RelativeLayout>
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

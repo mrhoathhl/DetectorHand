@@ -15,15 +15,15 @@
         <RelativeLayout
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="70dp">
+            android:layout_height="80dp">
 
             <ImageButton
                 android:id="@+id/challenge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/button_bg"
                 android:src="@drawable/challenge" />
 
@@ -32,8 +32,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:layout_gravity="end"
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/button_bg"
                 android:src="@drawable/setting" />
@@ -44,7 +44,6 @@
             android:id="@+id/my_template"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="20dp"
             android:layout_below="@+id/toolbar"
             app:gnt_template_type="@layout/gnt_small_template_view" />
 

@@ -6,8 +6,8 @@
             <corners
                 android:radius="@dimen/tfe_bottom_sheet_corner_radius" />
             <gradient
-                android:startColor="#FFFFFF"
-                android:centerColor="#FFFFFF"
+                android:startColor="@color/darkblue"
+                android:centerColor="@color/darkblue"
                 android:centerY="1.0"
                 android:endColor="#0d1522"
                 android:angle="270"
@@ -22,10 +22,10 @@
                 <corners
                     android:radius="@dimen/tfe_bottom_sheet_corner_radius" />
                 <gradient
-                    android:startColor="#1787e2"
-                    android:centerColor="#77d8d8"
+                    android:startColor="@color/white"
+                    android:centerColor="@color/white"
                     android:centerY="1.0"
-                    android:endColor="#77d8d8"
+                    android:endColor="@color/white"
                     android:angle="360"
                     />
             </shape>

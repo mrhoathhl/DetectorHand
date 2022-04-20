@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -108,10 +109,10 @@ public class ChallengeFragment extends Fragment implements View.OnClickListener 
         dialog.setContentView(R.layout.dialog_clear_history_custom);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-        TextView mDialogNo = dialog.findViewById(R.id.dismiss);
+        ImageView mDialogNo = dialog.findViewById(R.id.dismiss);
         mDialogNo.setOnClickListener(v -> dialog.dismiss());
 
-        TextView mDialogOk = dialog.findViewById(R.id.confirm);
+        ImageView mDialogOk = dialog.findViewById(R.id.confirm);
         mDialogOk.setOnClickListener(v -> {
             MainActivity.self().db.deleteAllScanHistories();
             dialog.dismiss();
