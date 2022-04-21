@@ -55,15 +55,15 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <com.google.android.ads.nativetemplates.TemplateView
-            android:id="@+id/my_template"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+        <FrameLayout
             android:layout_below="@+id/toolbar"
-            app:gnt_template_type="@layout/gnt_small_template_view" />
+            android:id="@+id/native_ad_layout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
 
         <RelativeLayout
-            android:layout_below="@+id/my_template"
+            android:layout_below="@+id/native_ad_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -87,74 +87,84 @@
 
             <RelativeLayout
                 android:id="@+id/showVirus"
-                android:visibility="invisible"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:visibility="invisible">
+
                 <LinearLayout
                     android:id="@+id/top"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <ImageView
-                        android:layout_margin="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/virus"/>
+                        android:layout_margin="20dp"
+                        android:src="@drawable/virus" />
+
                     <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/virus"/>
+                        android:src="@drawable/virus" />
+
                     <ImageView
-                        android:layout_margin="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/virus"/>
+                        android:layout_margin="20dp"
+                        android:src="@drawable/virus" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/top"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/virus"/>
+                        android:layout_margin="10dp"
+                        android:src="@drawable/virus" />
+
                     <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_margin="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/virus"/>
+                        android:src="@drawable/virus" />
+
                     <ImageView
-                        android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/virus"/>
+                        android:layout_margin="10dp"
+                        android:src="@drawable/virus" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_below="@+id/middle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/middle"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/virus"/>
+                        android:layout_margin="10dp"
+                        android:src="@drawable/virus" />
+
                     <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_margin="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/virus"/>
+                        android:src="@drawable/virus" />
+
                     <ImageView
-                        android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/virus"/>
+                        android:layout_margin="10dp"
+                        android:src="@drawable/virus" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -258,15 +268,6 @@
             </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:adSize="BANNER"
-            app:adUnitId="@string/bannerId" />
-
 
     </RelativeLayout>
 

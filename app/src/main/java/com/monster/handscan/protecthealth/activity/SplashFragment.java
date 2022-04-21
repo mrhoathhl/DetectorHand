@@ -12,9 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.database.SQLiteDBHelper;
 import com.monster.handscan.protecthealth.fragment.HomeFragment;
@@ -40,11 +37,7 @@ public class SplashFragment extends Fragment {
         simpleProgressBar = view.findViewById(R.id.progressBar); // initiate the progress bar
 
         db = new SQLiteDBHelper(requireContext());
-        MobileAds.initialize(requireContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
+
         doStartProgressBar();
         return view;
     }

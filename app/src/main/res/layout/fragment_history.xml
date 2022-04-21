@@ -49,18 +49,17 @@
                 android:src="@drawable/reset" />
         </RelativeLayout>
 
-        <com.google.android.ads.nativetemplates.TemplateView
-            android:id="@+id/my_template"
+        <FrameLayout
+            android:id="@+id/native_ad_layout"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_below="@+id/toolbar"
-            app:gnt_template_type="@layout/gnt_small_template_view" />
+            android:layout_below="@+id/toolbar" />
 
         <ListView
             android:id="@+id/history_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/my_template"
+            android:layout_below="@+id/native_ad_layout"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"

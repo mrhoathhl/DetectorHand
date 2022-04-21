@@ -29,12 +29,17 @@ import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.ImageReader.OnImageAvailableListener;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +55,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
+import com.applovin.mediation.ads.MaxAdView;
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.customview.OverlayView;
 import com.monster.handscan.protecthealth.database.SQLiteDBHelper;
@@ -60,6 +66,7 @@ import com.monster.handscan.protecthealth.detection.tflite.Detector;
 import com.monster.handscan.protecthealth.detection.tflite.TFLiteObjectDetectionAPIModel;
 import com.monster.handscan.protecthealth.model.ScanHistoryModel;
 import com.monster.handscan.protecthealth.tracking.MultiBoxTracker;
+import com.monster.handscan.protecthealth.utils.StringUtil;
 
 /**
  * An activity that uses a TensorFlowMultiBoxDetector and ObjectTracker to detect and then track
@@ -305,7 +312,6 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     public void setScanned(boolean scanned) {
         this.isScanned = scanned;
     }
-
 
     @Override
     protected Size getDesiredPreviewFrameSize() {

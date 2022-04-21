@@ -30,17 +30,17 @@
 
         </RelativeLayout>
 
-        <com.google.android.ads.nativetemplates.TemplateView
-            android:id="@+id/my_template"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+        <FrameLayout
             android:layout_below="@+id/toolbar"
-            app:gnt_template_type="@layout/gnt_small_template_view" />
+            android:id="@+id/native_ad_layout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/my_template"
+            android:layout_below="@+id/native_ad_layout"
             android:layout_marginBottom="100dp"
             android:background="@drawable/shadowbg"
             android:gravity="center">

@@ -8,47 +8,78 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Handler;
+import android.os.Looper;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.applovin.mediation.MaxAd;
+import com.applovin.mediation.MaxAdFormat;
+import com.applovin.mediation.MaxAdListener;
+import com.applovin.mediation.MaxError;
+import com.applovin.mediation.ads.MaxAdView;
+import com.applovin.mediation.ads.MaxInterstitialAd;
+import com.applovin.sdk.AppLovinSdk;
+import com.applovin.sdk.AppLovinSdkConfiguration;
+import com.applovin.sdk.AppLovinSdkUtils;
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.adapters.SharedPrefsManager;
 import com.monster.handscan.protecthealth.database.SQLiteDBHelper;
 import com.monster.handscan.protecthealth.fragment.HomeFragment;
-import com.monster.handscan.protecthealth.utils.AppOpenManager;
 import com.monster.handscan.protecthealth.utils.StringUtil;
+
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
     FragmentManager fragmentManager;
     private static MainActivity mSelf;
     public SQLiteDBHelper db;
-    private AdView mAdView;
-    public AppOpenManager appOpenManager;
-    private InterstitialAd interstitialAd;
-    Button settingBtn, noticeBtn, historyBtn, adviceBtn, scanBtn;
-
+    private MaxAdView adView;
+    private MaxInterstitialAd interstitialAd;
+    private int retryAttempt;
+    private boolean mBannerInitialized;
     public OnInterstitialListener interstitialListener;
+
+    final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mSelf = this;
-        mAdView = findViewById(R.id.adView);
 
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        appOpenManager = new AppOpenManager(this);
-        appOpenManager.fetchAd();
+        AppLovinSdk.getInstance(this).setMediationProvider("max");
+        AppLovinSdk.initializeSdk(this, configuration -> {
+        });
+
+        getWindow().getDecorView().setSystemUiVisibility(flags);
+
+        // Code below is to handle presses of Volume up or Volume down.
+        // Without this, after pressing volume buttons, the navigation bar will
+        // show up and won't hide
+        final View decorView = getWindow().getDecorView();
+        decorView
+                .setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            decorView.setSystemUiVisibility(flags);
+                        }
+                    }
+                });
         loadAd();
         db = new SQLiteDBHelper(this);
         fragmentManager = getSupportFragmentManager();
@@ -61,6 +92,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         SharedPrefsManager.getInstance().putLong("lastShow", 0);
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 
     public static MainActivity self() {
@@ -85,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         // Show the ad if it's ready. Otherwise toast and restart the game.
         long lastShow = SharedPrefsManager.getInstance().getLong("lastShow");
         if (Math.abs(System.currentTimeMillis() - lastShow) >= 30000 && interstitialAd != null) {
-            interstitialAd.show(this);
+            interstitialAd.showAd();
             SharedPrefsManager.getInstance().putLong("lastShow", System.currentTimeMillis());
         } else {
             if (interstitialListener != null) {
@@ -102,60 +147,89 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadAd() {
-        AdRequest adRequest = new AdRequest.Builder().build();
-        InterstitialAd.load(
-                this,
-                StringUtil.INTER_ID,
-                adRequest,
-                new InterstitialAdLoadCallback() {
+
+        interstitialAd = new MaxInterstitialAd(StringUtil.INTER_ID, this);
+        interstitialAd.setListener(new MaxAdListener() {
+            @Override
+            public void onAdLoaded(MaxAd ad) {
+                retryAttempt = 0;
+            }
+
+            @Override
+            public void onAdDisplayed(MaxAd ad) {
+                if (interstitialListener != null) {
+                    interstitialListener.onGameInterstitialShowFailed();
+                }
+            }
+
+            @Override
+            public void onAdHidden(MaxAd ad) {
+                interstitialAd.loadAd();
+            }
+
+            @Override
+            public void onAdClicked(MaxAd ad) {
+
+            }
+
+            @Override
+            public void onAdLoadFailed(String adUnitId, MaxError error) {
+                retryAttempt++;
+                long delayMillis = TimeUnit.SECONDS.toMillis((long) Math.pow(2, Math.min(6, retryAttempt)));
+
+                new Handler().postDelayed(new Runnable() {
                     @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        MainActivity.this.interstitialAd = interstitialAd;
-//                        Toast.makeText(MainActivity.this, "onAdLoaded()", Toast.LENGTH_SHORT).show();
-                        interstitialAd.setFullScreenContentCallback(
-                                new FullScreenContentCallback() {
-                                    @Override
-                                    public void onAdDismissedFullScreenContent() {
-                                        // Called when fullscreen content is dismissed.
-                                        // Make sure to set your reference to null so you don't
-                                        // show it a second time.
-                                        MainActivity.this.interstitialAd = null;
-                                        if (interstitialListener != null) {
-                                            interstitialListener.onGameInterstitialClosed();
-                                        }
-                                        loadAd();
-                                        Log.d("TAG", "The ad was dismissed.");
-                                    }
-
-                                    @Override
-                                    public void onAdFailedToShowFullScreenContent(AdError adError) {
-                                        // Called when fullscreen content failed to show.
-                                        // Make sure to set your reference to null so you don't
-                                        // show it a second time.
-                                        if (interstitialListener != null) {
-                                            interstitialListener.onGameInterstitialShowFailed();
-                                        }
-                                        MainActivity.this.interstitialAd = null;
-                                        Log.d("TAG", "The ad failed to show.");
-                                    }
-
-                                    @Override
-                                    public void onAdShowedFullScreenContent() {
-                                        // Called when fullscreen content is shown.
-                                        loadAd();
-                                        Log.d("TAG", "The ad was shown.");
-                                    }
-                                });
+                    public void run() {
+                        interstitialAd.loadAd();
                     }
+                }, delayMillis);
+            }
 
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        interstitialAd = null;
-                    }
-                });
+            @Override
+            public void onAdDisplayFailed(MaxAd ad, MaxError error) {
+                if (interstitialListener != null) {
+                    interstitialListener.onGameInterstitialShowFailed();
+                }
+                interstitialAd.loadAd();
+            }
+        });
+        interstitialAd.loadAd();
+    }
+
+    void loadBannerAd() {
+        adView = new MaxAdView(StringUtil.BANNER_ID, this);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.FILL_PARENT, FrameLayout.LayoutParams.FILL_PARENT, Gravity.CENTER | Gravity.CENTER_HORIZONTAL);
+        addContentView(adView, params);
+        adView.setGravity(Gravity.BOTTOM);
+        adView.setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
+        adView.loadAd();
+    }
+
+    public void showBanner() {
+        try {
+            if (!mBannerInitialized) {
+                mBannerInitialized = true;
+                loadBannerAd();
+            } else {
+                Log.e("Banner", "show");
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.post(() -> adView.setVisibility(View.VISIBLE));
+            }
+        } catch (NullPointerException e) {
+            Log.e("Null Banner", e.getMessage());
+        }
+    }
+
+    public void hideBanner() {
+        if (adView != null) {
+            Handler handler = new Handler(Looper.getMainLooper());
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    adView.setVisibility(View.GONE);
+                }
+            });
+        }
     }
 
     public interface OnInterstitialListener {

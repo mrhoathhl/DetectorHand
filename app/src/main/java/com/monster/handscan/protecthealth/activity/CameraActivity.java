@@ -20,7 +20,6 @@ import android.Manifest;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.ColorDrawable;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
@@ -34,36 +33,40 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.Looper;
 import android.os.Trace;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.Size;
+import android.view.Gravity;
 import android.view.Surface;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
-import java.nio.ByteBuffer;
-
-import com.google.android.ads.nativetemplates.NativeTemplateStyle;
-import com.google.android.ads.nativetemplates.TemplateView;
-import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.nativead.NativeAd;
+import com.applovin.mediation.MaxAd;
+import com.applovin.mediation.MaxError;
+import com.applovin.mediation.ads.MaxAdView;
+import com.applovin.mediation.nativeAds.MaxNativeAdListener;
+import com.applovin.mediation.nativeAds.MaxNativeAdLoader;
+import com.applovin.mediation.nativeAds.MaxNativeAdView;
 import com.monster.handscan.protecthealth.R;
-import com.monster.handscan.protecthealth.fragment.CameraConnectionFragment;
-import com.monster.handscan.protecthealth.fragment.LegacyCameraConnectionFragment;
 import com.monster.handscan.protecthealth.env.ImageUtils;
 import com.monster.handscan.protecthealth.env.Logger;
+import com.monster.handscan.protecthealth.fragment.CameraConnectionFragment;
+import com.monster.handscan.protecthealth.fragment.LegacyCameraConnectionFragment;
 import com.monster.handscan.protecthealth.utils.StringUtil;
+
+import java.nio.ByteBuffer;
 
 public abstract class CameraActivity extends AppCompatActivity
         implements OnImageAvailableListener,
@@ -87,7 +90,11 @@ public abstract class CameraActivity extends AppCompatActivity
     private Runnable postInferenceCallback;
     private Runnable imageConverter;
 
-    private AdView mAdView;
+    private MaxNativeAdLoader nativeAdLoader;
+    private MaxAd nativeAd;
+    private MaxAdView adView;
+    private boolean mBannerInitialized;
+
     private ImageButton backBtn, challengeBtn, okBtn;
     private CardView resultPopupCard;
     private boolean isScanned;
@@ -127,21 +134,61 @@ public abstract class CameraActivity extends AppCompatActivity
         setResultTxt(resultTxt);
         setActionTxt(actionTxt);
         setRelativeLayout(relativeLayout);
+        showBanner();
+        FrameLayout nativeAdContainer = findViewById(R.id.native_ad_layout);
 
-        AdLoader adLoader = new AdLoader.Builder(this, StringUtil.NATIVE_ID)
-                .forNativeAd(nativeAd -> {
-                    NativeTemplateStyle styles = new
-                            NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(10000)).build();
-                    TemplateView template = findViewById(R.id.my_template);
-                    template.setStyles(styles);
-                    template.setNativeAd(nativeAd);
-                })
-                .build();
+        nativeAdLoader = new MaxNativeAdLoader(StringUtil.NATIVE_ID, this);
+        nativeAdLoader.setNativeAdListener(new MaxNativeAdListener() {
+            @Override
+            public void onNativeAdLoaded(final MaxNativeAdView nativeAdView, final MaxAd ad) {
+                // Clean up any pre-existing native ad to prevent memory leaks.
+                if (nativeAd != null) {
+                    nativeAdLoader.destroy(nativeAd);
+                }
+                // Save ad for cleanup.
+                nativeAd = ad;
 
-        adLoader.loadAd(new AdRequest.Builder().build());
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+                // Add ad view to view.
+                nativeAdContainer.removeAllViews();
+                nativeAdContainer.addView(nativeAdView);
+            }
+
+            @Override
+            public void onNativeAdLoadFailed(final String adUnitId, final MaxError error) {
+                nativeAdLoader.loadAd();
+            }
+
+            @Override
+            public void onNativeAdClicked(final MaxAd ad) {
+                // Optional click callback
+            }
+        });
+        nativeAdLoader.loadAd();
+    }
+
+
+    void loadBannerAd() {
+        adView = new MaxAdView(StringUtil.BANNER_ID, this);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.FILL_PARENT, FrameLayout.LayoutParams.FILL_PARENT, Gravity.CENTER | Gravity.CENTER_HORIZONTAL);
+        addContentView(adView, params);
+        adView.setGravity(Gravity.BOTTOM);
+        adView.setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
+        adView.loadAd();
+    }
+
+    public void showBanner() {
+        try {
+            if (!mBannerInitialized) {
+                mBannerInitialized = true;
+                loadBannerAd();
+            } else {
+                Log.e("Banner", "show");
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.post(() -> adView.setVisibility(View.VISIBLE));
+            }
+        } catch (NullPointerException e) {
+            Log.e("Null Banner", e.getMessage());
+        }
     }
 
     protected int[] getRgbBytes() {

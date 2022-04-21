@@ -4,7 +4,7 @@ apply plugin: 'de.undercouch.download'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.matrixone.handscan.protecthealth"
+        applicationId "com.hand.scan.clean.health.lifestyle"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -58,7 +58,6 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation "com.android.billingclient:billing:3.0.0"
-    implementation 'com.google.android.gms:play-services-ads:20.5.0'
     implementation 'com.google.code.gson:gson:2.3.1'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.4'
     interpreterImplementation project(":lib_interpreter")
@@ -67,9 +66,14 @@ dependencies {
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation project(':nativetemplates')
+    implementation 'com.applovin:applovin-sdk:+'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'com.google.truth:truth:1.0.1'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test:rules:1.1.0'
+}
+apply plugin: 'applovin-quality-service'
+applovin {
+    apiKey "h_vu1XgvLhsRU_v-DOBLgsU913sBpTwc1LhdT_cRp0O5vP3-mcTbelPm0oU5N3paFULwctrSiXDL_KC-GI2qCv"
 }

@@ -1,34 +1,30 @@
 package com.monster.handscan.protecthealth.fragment;
 
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.ads.nativetemplates.NativeTemplateStyle;
-import com.google.android.ads.nativetemplates.TemplateView;
-import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.nativead.NativeAd;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
+import com.applovin.mediation.MaxAd;
+import com.applovin.mediation.MaxError;
+import com.applovin.mediation.nativeAds.MaxNativeAdListener;
+import com.applovin.mediation.nativeAds.MaxNativeAdLoader;
+import com.applovin.mediation.nativeAds.MaxNativeAdView;
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.activity.MainActivity;
 import com.monster.handscan.protecthealth.adapters.ViewPagerAdapter;
 import com.monster.handscan.protecthealth.model.AdviceModel;
 import com.monster.handscan.protecthealth.utils.StringUtil;
 
-
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class AdviceFragment extends Fragment {
 
@@ -37,6 +33,7 @@ public class AdviceFragment extends Fragment {
     LinearLayout layout_dot;
     TextView[] dot;
     ImageButton backBtn;
+    private MaxAd nativeAd;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,20 +62,36 @@ public class AdviceFragment extends Fragment {
                     }
                 }));
 
-        AdLoader adLoader = new AdLoader.Builder(requireActivity(), StringUtil.APP_OPEN_ID)
-                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                    @Override
-                    public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
-                        NativeTemplateStyle styles = new
-                                NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(10000)).build();
-                        TemplateView template =view.findViewById(R.id.my_template);
-                        template.setStyles(styles);
-                        template.setNativeAd(nativeAd);
-                    }
-                })
-                .build();
+        FrameLayout nativeAdContainer = view.findViewById(R.id.native_ad_layout);
 
-        adLoader.loadAd(new AdRequest.Builder().build());
+        MaxNativeAdLoader nativeAdLoader = new MaxNativeAdLoader(StringUtil.NATIVE_ID, getContext());
+        nativeAdLoader.setNativeAdListener(new MaxNativeAdListener() {
+            @Override
+            public void onNativeAdLoaded(final MaxNativeAdView nativeAdView, final MaxAd ad) {
+                // Clean up any pre-existing native ad to prevent memory leaks.
+                if (nativeAd != null) {
+                    nativeAdLoader.destroy(nativeAd);
+                }
+                // Save ad for cleanup.
+                nativeAd = ad;
+                // Add ad view to view.
+                nativeAdContainer.removeAllViews();
+                nativeAdContainer.addView(nativeAdView);
+            }
+
+            @Override
+            public void onNativeAdLoadFailed(final String adUnitId, final MaxError error) {
+                nativeAdLoader.loadAd();
+            }
+
+            @Override
+            public void onNativeAdClicked(final MaxAd ad) {
+                // Optional click callback
+            }
+        });
+
+        nativeAdLoader.loadAd();
+
         arrayList = new ArrayList<>();
 
         arrayList.add(new AdviceModel("Before Entering Home From Outside", R.drawable.ad1));
@@ -98,10 +111,12 @@ public class AdviceFragment extends Fragment {
             public void onPageScrolled(int i, float v, int i1) {
 
             }
+
             @Override
             public void onPageSelected(int i) {
                 addDot(i);
             }
+
             @Override
             public void onPageScrollStateChanged(int i) {
 
@@ -114,7 +129,8 @@ public class AdviceFragment extends Fragment {
         dot = new TextView[arrayList.size()];
         layout_dot.removeAllViews();
 
-        for (int i = 0; i < dot.length; i++) {;
+        for (int i = 0; i < dot.length; i++) {
+            ;
             dot[i] = new TextView(getContext());
             dot[i].setText(Html.fromHtml("&#9673;"));
             dot[i].setTextSize(15);

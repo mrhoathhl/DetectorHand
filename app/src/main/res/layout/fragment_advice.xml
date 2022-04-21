@@ -41,11 +41,11 @@
                 android:textSize="22sp" />
         </RelativeLayout>
 
-        <com.google.android.ads.nativetemplates.TemplateView
-            android:id="@+id/my_template"
+        <FrameLayout
+            android:layout_below="@+id/toolbar"
+            android:id="@+id/native_ad_layout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:gnt_template_type="@layout/gnt_small_template_view" />
+            android:layout_height="100dp"/>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
@@ -54,7 +54,7 @@
             android:layout_weight="1"
             android:paddingLeft="20dp"
             android:paddingTop="20dp"
-            android:paddingRight="20dp" />
+            android:paddingRight="20dp"/>
 
         <LinearLayout
             android:id="@+id/layout_dot"
