@@ -16,8 +16,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="165dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="15dp">
+            app:cardElevation="0dp">
 
             <RatingBar
                 android:id="@+id/rating_bar"

@@ -94,11 +94,11 @@ public class AdviceFragment extends Fragment {
 
         arrayList = new ArrayList<>();
 
-        arrayList.add(new AdviceModel("Before Entering Home From Outside", R.drawable.ad1));
-        arrayList.add(new AdviceModel("Before/After Going To Bed", R.drawable.ad2));
-        arrayList.add(new AdviceModel("Before Eating", R.drawable.ad3));
-        arrayList.add(new AdviceModel("After Hand Shaking", R.drawable.ad4));
-        arrayList.add(new AdviceModel("After Completing Work Out", R.drawable.ad5));
+        arrayList.add(new AdviceModel("Before going back home", R.drawable.ad1));
+        arrayList.add(new AdviceModel("Before and after going to bed", R.drawable.ad2));
+        arrayList.add(new AdviceModel("Before and after eating", R.drawable.ad3));
+        arrayList.add(new AdviceModel("After shaking hand", R.drawable.ad4));
+        arrayList.add(new AdviceModel("After working out", R.drawable.ad5));
 
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getContext(), arrayList);
         viewPager.setAdapter(pagerAdapter);
