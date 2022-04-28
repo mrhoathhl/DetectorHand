@@ -122,6 +122,7 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
 
         ImageView mDialogOk = dialog.findViewById(R.id.confirm);
         mDialogOk.setOnClickListener(v -> {
+            listView.setAdapter(null);
             MainActivity.self().db.deleteAllScanHistories();
             dialog.dismiss();
         });

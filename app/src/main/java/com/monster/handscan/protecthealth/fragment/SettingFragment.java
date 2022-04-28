@@ -90,6 +90,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
                 openRatingDialog();
                 break;
             case R.id.policyBtn:
+                openPolicy();
                 break;
             case R.id.backBtn:
                 ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
@@ -104,6 +105,15 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
                     }
                 });
                 break;
+        }
+    }
+
+    public void openPolicy() {
+        try {
+            Uri uri = Uri.parse("https://sites.google.com/d/1k3yORsz69CpgvX1RrRqQ5e-TF5UKiuxJ/p/1twF-f7Wty4euoDZbyDESRFkv1vKvGipp/edit");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        } catch (Exception e) {
         }
     }
 
