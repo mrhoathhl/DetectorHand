@@ -190,28 +190,29 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/resultPopup"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:layout_alignParentTop="true"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
                 android:visibility="invisible"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="10dp"
-                app:cardMaxElevation="12dp"
+                app:cardElevation="0dp"
+                app:cardMaxElevation="0dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/cardview_gradient">
 
                     <TextView
                         android:id="@+id/title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="20dp"
                         android:fontFamily="@font/medium"
-                        android:gravity="center"
                         android:text="Hand Scanning Result"
                         android:textAlignment="center"
                         android:textColor="#1076b8"
@@ -223,7 +224,6 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/title"
                         android:fontFamily="@font/condensedbold"
-                        android:gravity="center"
                         android:text="80%"
                         android:textAlignment="center"
                         android:textColor="#1076b8"
@@ -260,10 +260,11 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/actionTxt"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
                         android:background="@drawable/ok"
-                        android:src="@drawable/ok"
-                        android:contentDescription="TODO" />
+                        android:contentDescription="TODO"
+                        android:src="@drawable/ok" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 

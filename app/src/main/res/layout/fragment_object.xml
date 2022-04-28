@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/backgroud"
     tools:context=".fragment.ObjectFragment">
 
     <RelativeLayout
@@ -42,7 +42,6 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/native_ad_layout"
             android:layout_marginBottom="100dp"
-            android:background="@drawable/shadowbg"
             android:gravity="center">
 
             <androidx.cardview.widget.CardView
@@ -51,8 +50,10 @@
                 android:layout_height="300dp"
                 android:visibility="visible"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="10dp"
-                app:cardMaxElevation="12dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardElevation="0dp"
+                app:cardMaxElevation="0dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true">
 

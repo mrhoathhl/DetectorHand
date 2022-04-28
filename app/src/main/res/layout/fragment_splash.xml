@@ -3,9 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroudloading"
     tools:context=".activity.SplashFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view"
+        android:src="@drawable/backgroudloading"
+        android:scaleType="centerCrop" />
 
     <ProgressBar
         android:id="@+id/progressBar"
