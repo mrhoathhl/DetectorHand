@@ -2,9 +2,10 @@
   <library name="Gradle: com.google.android.odml:image:1.0.0-beta1@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/88d54f02cf1e83a068292c563ae275c7/transformed/jetified-image-1.0.0-beta1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7dce5bb665053fcdcb849efc0f94b42e/transformed/jetified-image-1.0.0-beta1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7dce5bb665053fcdcb849efc0f94b42e/transformed/jetified-image-1.0.0-beta1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7dce5bb665053fcdcb849efc0f94b42e/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/31ad355b54dbc9c3bec8e7bfd75225f1/transformed/jetified-image-1.0.0-beta1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/31ad355b54dbc9c3bec8e7bfd75225f1/transformed/jetified-image-1.0.0-beta1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/31ad355b54dbc9c3bec8e7bfd75225f1/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.odml/image/1.0.0-beta1/aa9d23e3124a588104fe600f42af0e192f732599/image-1.0.0-beta1-javadoc.jar!/" />

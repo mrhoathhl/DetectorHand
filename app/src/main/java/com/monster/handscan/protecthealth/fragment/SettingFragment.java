@@ -110,7 +110,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
 
     public void openPolicy() {
         try {
-            Uri uri = Uri.parse("https://sites.google.com/d/1k3yORsz69CpgvX1RrRqQ5e-TF5UKiuxJ/p/1twF-f7Wty4euoDZbyDESRFkv1vKvGipp/edit");
+            Uri uri = Uri.parse("https://sites.google.com/view/growth-app-policy/");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
         } catch (Exception e) {

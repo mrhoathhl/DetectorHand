@@ -2,9 +2,10 @@
   <library name="Gradle: org.tensorflow:tensorflow-lite-api:0.0.0-nightly-SNAPSHOT@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a89b19f9e3f27fd7a85fc8c6f652d33d/transformed/jetified-tensorflow-lite-api-0.0.0-nightly-SNAPSHOT/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bd69e4e02990bc3d6828e72a9c782ca8/transformed/jetified-tensorflow-lite-api-0.0.0-nightly-SNAPSHOT/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bd69e4e02990bc3d6828e72a9c782ca8/transformed/jetified-tensorflow-lite-api-0.0.0-nightly-SNAPSHOT/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/bd69e4e02990bc3d6828e72a9c782ca8/transformed/jetified-tensorflow-lite-api-0.0.0-nightly-SNAPSHOT/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a881c7b76f1d7d9129d3b150d5a123e8/transformed/jetified-tensorflow-lite-api-0.0.0-nightly-SNAPSHOT/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a881c7b76f1d7d9129d3b150d5a123e8/transformed/jetified-tensorflow-lite-api-0.0.0-nightly-SNAPSHOT/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a881c7b76f1d7d9129d3b150d5a123e8/transformed/jetified-tensorflow-lite-api-0.0.0-nightly-SNAPSHOT/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
