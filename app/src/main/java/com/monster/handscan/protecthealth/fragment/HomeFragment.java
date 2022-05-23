@@ -96,54 +96,66 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.scanBtn) {
-            Intent intent = new Intent(getContext(), DetectorActivity.class);
-            intent.putExtra("type", "normal");
-            requireActivity().startActivity(intent);
-        } else {
-            ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
-                @Override
-                public void onGameInterstitialClosed() {
-                    switch (v.getId()) {
-                        case R.id.settingBtn:
-                            ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
-                            break;
-                        case R.id.challenge:
-                            ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
-                            break;
-                        case R.id.historyBtn:
-                            ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
-                            break;
-                        case R.id.adviceBtn:
-                            ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
-                            break;
-                        case R.id.objectBtn:
-                            ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
-                            break;
-                    }
+//        if (v.getId() == R.id.scanBtn) {
+//            Intent intent = new Intent(getContext(), DetectorActivity.class);
+//            intent.putExtra("type", "normal");
+//            requireActivity().startActivity(intent);
+//        } else {
+        ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
+            @Override
+            public void onGameInterstitialClosed() {
+                switch (v.getId()) {
+                    case R.id.scanBtn:
+                        Log.e("Show", "Successful1");
+                        Intent intent = new Intent(getContext(), DetectorActivity.class);
+                        intent.putExtra("type", "normal");
+                        requireActivity().startActivity(intent);
+                        break;
+                    case R.id.settingBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
+                        break;
+                    case R.id.challenge:
+                        ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
+                        break;
+                    case R.id.historyBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
+                        break;
+                    case R.id.adviceBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
+                        break;
+                    case R.id.objectBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
+                        break;
                 }
+            }
 
-                @Override
-                public void onGameInterstitialShowFailed() {
-                    switch (v.getId()) {
-                        case R.id.settingBtn:
-                            ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
-                            break;
-                        case R.id.challenge:
-                            ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
-                            break;
-                        case R.id.historyBtn:
-                            ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
-                            break;
-                        case R.id.adviceBtn:
-                            ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
-                            break;
-                        case R.id.objectBtn:
-                            ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
-                            break;
-                    }
+            @Override
+            public void onGameInterstitialShowFailed() {
+                switch (v.getId()) {
+                    case R.id.scanBtn:
+                        Log.e("Show", "Successful2");
+                        Intent intent = new Intent(getContext(), DetectorActivity.class);
+                        intent.putExtra("type", "normal");
+                        requireActivity().startActivity(intent);
+                        break;
+                    case R.id.settingBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
+                        break;
+                    case R.id.challenge:
+                        ((MainActivity) requireActivity()).changeFragment(new ChallengeFragment());
+                        break;
+                    case R.id.historyBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new HistoryFragment());
+                        break;
+                    case R.id.adviceBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
+                        break;
+                    case R.id.objectBtn:
+                        ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
+                        break;
                 }
-            });
-        }
+            }
+        });
+//        }
     }
 }

@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         db = new SQLiteDBHelper(this);
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.mainContainer, new SplashFragment(), null);
+        fragmentTransaction.add(R.id.mainContainer, new HomeFragment(), null);
         fragmentTransaction.commit();
     }
 
@@ -157,13 +157,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdDisplayed(MaxAd ad) {
-                if (interstitialListener != null) {
-                    interstitialListener.onGameInterstitialShowFailed();
-                }
+//                if (interstitialListener != null) {
+//                    interstitialListener.onGameInterstitialClosed();
+//                }
             }
 
             @Override
             public void onAdHidden(MaxAd ad) {
+                if (interstitialListener != null) {
+                    interstitialListener.onGameInterstitialClosed();
+                }
                 interstitialAd.loadAd();
             }
 
