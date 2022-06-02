@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "981060307852",
+    "project_id": "hand-3320d",
+    "storage_bucket": "hand-3320d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981060307852:android:95ef7feb703d36fe03a4a9",
+        "android_client_info": {
+          "package_name": "com.hand.scan.clean.health.lifestyle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "981060307852-l3tm67t7ovo71emlkuat67fjb1ah8na7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2G8nAEKp8cv73nVW5tJ-2-TeMA39PNUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "981060307852-l3tm67t7ovo71emlkuat67fjb1ah8na7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

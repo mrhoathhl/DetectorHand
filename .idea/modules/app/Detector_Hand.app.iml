@@ -65,7 +65,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:runner:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:core:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:monitor:1.2.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: E./Project/DetectorHand/.safedk/api/SafeDKAndroid-5.6.1.jar" level="project" />
+    <orderEntry type="library" name="Gradle: E./Project/DetectorHand/.safedk/api/SafeDKAndroid-5.6.2.jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.3.1" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.11.4" level="project" />
     <orderEntry type="library" name="Gradle: androidx.collection:collection:1.1.0" level="project" />
@@ -88,20 +88,21 @@
     <orderEntry type="library" name="Gradle: com.android.billingclient:billing:3.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.material:material:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat:1.2.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.applovin.mediation:google-adapter:20.6.0.11@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads:20.6.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.applovin.mediation:google-adapter:21.0.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads:21.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.browser:browser:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.legacy:legacy-support-core-ui:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.applovin:applovin-sdk:11.4.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.applovin.mediation:facebook-adapter:6.11.0.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.applovin.mediation:mintegral-adapter:16.1.11.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.cardview:cardview:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement:20.1.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-sdk:20.1.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-api:20.1.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-impl:20.1.2@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-lite:20.6.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.ump:user-messaging-platform:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-lite:21.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.ump:user-messaging-platform:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-identifier:18.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.android:audience-network-sdk:6.11.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-sdk-api:20.1.2@aar" level="project" />
@@ -110,11 +111,11 @@
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-installations:17.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-common:20.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-installations-interop:17.0.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-appset:16.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-base:17.6.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-appset:16.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-base:18.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks:18.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-measurement-connector:19.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-base:20.6.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-base:21.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-basement:18.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.fragment:fragment:1.2.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.transition:transition:1.3.0@aar" level="project" />
@@ -162,6 +163,18 @@
     <orderEntry type="library" name="Gradle: com.google.android.exoplayer:exoplayer-rtsp:2.15.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.exoplayer:exoplayer-smoothstreaming:2.15.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.exoplayer:exoplayer-transformer:2.15.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:interstitial:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:interstitialvideo:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:mbbanner:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:mbbid:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:mbnative:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:reward:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:mbjscommon:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:playercommon:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:videocommon:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:videojs:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:nativeex:16.1.11@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.mbridge.msdk.oversea:same:16.1.11@aar" level="project" />
     <orderEntry type="module" module-name="Detector_Hand.nativetemplates" />
     <orderEntry type="module" module-name="Detector_Hand.lib_task_api" />
   </component>

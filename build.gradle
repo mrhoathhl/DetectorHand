@@ -26,6 +26,7 @@ allprojects {
             url 'http://oss.sonatype.org/content/repositories/snapshots'
         }
         mavenLocal()
+        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
     }
 }
 

@@ -1,9 +1,13 @@
 package com.monster.handscan.protecthealth.activity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         AppLovinSdk.getInstance(this).setMediationProvider("max");
         AppLovinSdk.initializeSdk(this, configuration -> {
         });
-
+        checkCameraPermission();
         getWindow().getDecorView().setSystemUiVisibility(flags);
 
         // Code below is to handle presses of Volume up or Volume down.
@@ -233,6 +237,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public boolean checkCameraPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CAMERA},
+                    0);
+            return false;
+        }
+        return true;
     }
 
     public interface OnInterstitialListener {

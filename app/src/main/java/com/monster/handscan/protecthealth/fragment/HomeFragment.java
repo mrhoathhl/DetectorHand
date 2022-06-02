@@ -1,14 +1,22 @@
 package com.monster.handscan.protecthealth.fragment;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -19,10 +27,13 @@ import com.applovin.mediation.nativeAds.MaxNativeAdLoader;
 import com.applovin.mediation.nativeAds.MaxNativeAdView;
 import com.applovin.sdk.AppLovinSdk;
 import com.applovin.sdk.AppLovinSdkConfiguration;
+import com.monster.handscan.protecthealth.BuildConfig;
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.activity.DetectorActivity;
 import com.monster.handscan.protecthealth.activity.MainActivity;
 import com.monster.handscan.protecthealth.utils.StringUtil;
+
+import java.util.Objects;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
@@ -94,22 +105,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         super.onStart();
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-//        if (v.getId() == R.id.scanBtn) {
-//            Intent intent = new Intent(getContext(), DetectorActivity.class);
-//            intent.putExtra("type", "normal");
-//            requireActivity().startActivity(intent);
-//        } else {
         ((MainActivity) requireActivity()).showInterstitial(new MainActivity.OnInterstitialListener() {
             @Override
             public void onGameInterstitialClosed() {
                 switch (v.getId()) {
                     case R.id.scanBtn:
-                        Log.e("Show", "Successful1");
-                        Intent intent = new Intent(getContext(), DetectorActivity.class);
-                        intent.putExtra("type", "normal");
-                        requireActivity().startActivity(intent);
+                        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
+                                == PackageManager.PERMISSION_GRANTED) {
+                            Intent intent = new Intent(getContext(), DetectorActivity.class);
+                            intent.putExtra("type", "normal");
+                            requireActivity().startActivity(intent);
+                        } else {
+                            Toast toast =
+                                    Toast.makeText(
+                                            getContext(), "Please provide camera permission", Toast.LENGTH_SHORT);
+                            toast.show();
+                            startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + BuildConfig.APPLICATION_ID)));
+                        }
                         break;
                     case R.id.settingBtn:
                         ((MainActivity) requireActivity()).changeFragment(new SettingFragment());
@@ -133,10 +148,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             public void onGameInterstitialShowFailed() {
                 switch (v.getId()) {
                     case R.id.scanBtn:
-                        Log.e("Show", "Successful2");
-                        Intent intent = new Intent(getContext(), DetectorActivity.class);
-                        intent.putExtra("type", "normal");
-                        requireActivity().startActivity(intent);
+                        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
+                                == PackageManager.PERMISSION_GRANTED) {
+                            Log.e("Show", "Successful1");
+                            Intent intent = new Intent(getContext(), DetectorActivity.class);
+                            intent.putExtra("type", "normal");
+                            requireActivity().startActivity(intent);
+                        } else {
+                            Toast toast =
+                                    Toast.makeText(
+                                            getContext(), "Please provide camera permission", Toast.LENGTH_SHORT);
+                            toast.show();
+                            startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + BuildConfig.APPLICATION_ID)));
+                        }
                         break;
                     case R.id.settingBtn:
                         ((MainActivity) requireActivity()).changeFragment(new SettingFragment());

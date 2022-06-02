@@ -247,7 +247,7 @@ public class TemplateView extends FrameLayout {
   }
 
   /**
-   * To prevent memory leaks, make sure to destroy your ad when you don't need it anymore. This
+   * To prevent memory leaks, make sure to destroy yoopenCamera ur ad when you don't need it anymore. This
    * method does not destroy the template view.
    * https://developers.google.com/admob/android/native-unified#destroy_ad
    */
