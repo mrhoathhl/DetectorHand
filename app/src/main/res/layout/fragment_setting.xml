@@ -55,21 +55,70 @@
             android:layout_marginTop="80dp"
             android:gravity="center"
             android:orientation="vertical">
+            
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:background="@drawable/round_button"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/rateBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_bg"
-                android:src="@drawable/rate" />
+                <ImageButton
+                    android:id="@+id/rateBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_button" />
 
-            <ImageButton
-                android:id="@+id/policyBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_rate_us"
+                    app:tint="@color/darkblue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/rate_us"
+                    android:textColor="@color/darkblue"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/button_bg"
-                android:src="@drawable/policy" />
+                android:background="@drawable/round_button"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/policyBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_button" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_policy"
+                    app:tint="@color/darkblue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/policy"
+                    android:textColor="@color/darkblue"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
         </LinearLayout>
     </RelativeLayout>
 

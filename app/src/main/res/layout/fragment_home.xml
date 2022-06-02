@@ -17,15 +17,15 @@
             android:layout_width="match_parent"
             android:layout_height="80dp">
 
-            <ImageButton
-                android:id="@+id/challenge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:background="@drawable/button_bg"
-                android:src="@drawable/challenge" />
+            <!--            <ImageButton-->
+            <!--                android:id="@+id/challenge"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignParentStart="true"-->
+            <!--                android:layout_centerVertical="true"-->
+            <!--                android:layout_marginStart="20dp"-->
+            <!--                android:background="@drawable/button_bg"-->
+            <!--                android:src="@drawable/challenge" />-->
 
             <ImageButton
                 android:id="@+id/settingBtn"
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Press the circle to scan"
+                android:text="@string/press_button_mainmenu"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
@@ -84,33 +84,123 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="20dp"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/historyBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_alignParentStart="true"
-                    android:background="@drawable/button_bg"
-                    android:src="@drawable/history" />
+                    android:background="@drawable/round_button"
+                    android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/adviceBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/button_bg"
-                    android:src="@drawable/advice" />
+                    <ImageButton
+                        android:id="@+id/historyBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button" />
 
-                <ImageButton
-                    android:id="@+id/objectBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/ic_history"
+                        app:tint="@color/darkblue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/history"
+                        android:textAlignment="center"
+                        android:textColor="@color/darkblue" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/round_button"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/adviceBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/ic_advice"
+                        app:tint="@color/darkblue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/advice"
+                        android:textAlignment="center"
+                        android:textColor="@color/darkblue" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/button_bg"
-                    android:src="@drawable/object" />
+                    android:background="@drawable/round_button"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/challenge"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/noti_dot" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/ic_challlenge"
+                        app:tint="@color/darkblue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/challenge_mainmenu"
+                        android:textAlignment="center"
+                        android:textColor="@color/darkblue" />
+
+                </RelativeLayout>
+
             </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>

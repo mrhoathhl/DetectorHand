@@ -88,7 +88,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         historyBtn = view.findViewById(R.id.historyBtn);
         adviceBtn = view.findViewById(R.id.adviceBtn);
         scanBtn = view.findViewById(R.id.scanBtn);
-        objectBtn = view.findViewById(R.id.objectBtn);
+//        objectBtn = view.findViewById(R.id.objectBtn);
 
 
         settingBtn.setOnClickListener(this);
@@ -96,7 +96,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         historyBtn.setOnClickListener(this);
         adviceBtn.setOnClickListener(this);
         scanBtn.setOnClickListener(this);
-        objectBtn.setOnClickListener(this);
+//        objectBtn.setOnClickListener(this);
         return view;
     }
 
@@ -138,9 +138,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     case R.id.adviceBtn:
                         ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
                         break;
-                    case R.id.objectBtn:
-                        ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
-                        break;
+//                    case R.id.objectBtn:
+//                        ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
+//                        break;
                 }
             }
 
@@ -174,9 +174,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     case R.id.adviceBtn:
                         ((MainActivity) requireActivity()).changeFragment(new AdviceFragment());
                         break;
-                    case R.id.objectBtn:
-                        ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
-                        break;
+//                    case R.id.objectBtn:
+//                        ((MainActivity) requireActivity()).changeFragment(new ObjectFragment());
+//                        break;
                 }
             }
         });
