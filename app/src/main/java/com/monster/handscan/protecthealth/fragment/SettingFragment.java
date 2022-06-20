@@ -27,6 +27,7 @@ import com.applovin.mediation.nativeAds.MaxNativeAdLoader;
 import com.applovin.mediation.nativeAds.MaxNativeAdView;
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.activity.MainActivity;
+import com.monster.handscan.protecthealth.utils.FunctionUtil;
 import com.monster.handscan.protecthealth.utils.StringUtil;
 
 public class SettingFragment extends Fragment implements View.OnClickListener {
@@ -44,6 +45,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_setting, container, false);
+        FunctionUtil.setLanguage(requireActivity());
 
         FrameLayout nativeAdContainer = view.findViewById(R.id.native_ad_layout);
         MaxNativeAdLoader nativeAdLoader = new MaxNativeAdLoader(StringUtil.NATIVE_ID, getContext());

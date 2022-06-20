@@ -22,9 +22,11 @@ import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.activity.MainActivity;
 import com.monster.handscan.protecthealth.adapters.ViewPagerAdapter;
 import com.monster.handscan.protecthealth.model.AdviceModel;
+import com.monster.handscan.protecthealth.utils.FunctionUtil;
 import com.monster.handscan.protecthealth.utils.StringUtil;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AdviceFragment extends Fragment {
 
@@ -45,6 +47,7 @@ public class AdviceFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_advice, container, false);
+        FunctionUtil.setLanguage(requireActivity());
         viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         layout_dot = (LinearLayout) view.findViewById(R.id.layout_dot);
         backBtn = (ImageButton) view.findViewById(R.id.backBtn);
@@ -94,11 +97,11 @@ public class AdviceFragment extends Fragment {
 
         arrayList = new ArrayList<>();
 
-        arrayList.add(new AdviceModel("Before going back home", R.drawable.ad1));
-        arrayList.add(new AdviceModel("Before and after going to bed", R.drawable.ad2));
-        arrayList.add(new AdviceModel("Before and after eating", R.drawable.ad3));
-        arrayList.add(new AdviceModel("After shaking hand", R.drawable.ad4));
-        arrayList.add(new AdviceModel("After working out", R.drawable.ad5));
+        arrayList.add(new AdviceModel(getString(R.string.go_back_home), R.drawable.ad1));
+        arrayList.add(new AdviceModel(getString(R.string.go_to_bed), R.drawable.ad2));
+        arrayList.add(new AdviceModel(getString(R.string.after_eating), R.drawable.ad3));
+        arrayList.add(new AdviceModel(getString(R.string.after_shaking_hand), R.drawable.ad4));
+        arrayList.add(new AdviceModel(getString(R.string.after_workout), R.drawable.ad5));
 
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getContext(), arrayList);
         viewPager.setAdapter(pagerAdapter);

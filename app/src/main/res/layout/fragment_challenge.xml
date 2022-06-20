@@ -110,7 +110,7 @@
                         android:layout_marginTop="25dp"
                         android:fontFamily="@font/condensedbold"
                         android:gravity="center"
-                        android:text="Clean your hands \n within 7 days"
+                        android:text="@string/clean_your_hands_n_within_7_days"
                         android:textAlignment="center"
                         android:textColor="#1076b8"
                         android:textSize="25sp" />
@@ -131,7 +131,7 @@
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/condensedbold"
                         android:gravity="center"
-                        android:text="people accepted the challenge"
+                        android:text="@string/people_accepted_the_challenge"
                         android:textAlignment="center"
                         android:textColor="#1076b8"
                         android:textSize="18sp" />
@@ -143,7 +143,7 @@
                         android:layout_gravity="center|bottom"
                         android:layout_marginTop="20dp"
                         android:fontFamily="@font/medium"
-                        android:text="You can remove the ads after \n completing the challenge"
+                        android:text="@string/you_can_remove_the_ads_after_n_completing_the_challenge"
                         android:textAlignment="center"
                         android:textColor="#1076b8"
                         android:textSize="18sp" />

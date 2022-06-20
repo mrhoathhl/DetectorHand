@@ -21,6 +21,7 @@
         tools:targetApi="n">
         <activity
             android:name="com.monster.handscan.protecthealth.activity.MainActivity"
+            android:configChanges="locale|orientation"
             android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

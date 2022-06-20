@@ -42,7 +42,6 @@
         </RelativeLayout>
 
         <FrameLayout
-            android:layout_below="@+id/toolbar"
             android:id="@+id/native_ad_layout"
             android:layout_width="match_parent"
             android:layout_height="100dp"/>
@@ -50,7 +49,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"/>

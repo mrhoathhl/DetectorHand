@@ -30,11 +30,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
                     android:fontFamily="@font/condensedbold"
                     android:gravity="center"
-                    android:text="Clear history"
+                    android:text="@string/clear_history"
                     android:textColor="@color/darkblue"
                     android:textSize="25sp" />
 
@@ -42,16 +42,16 @@
                     android:id="@+id/questuio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:layout_below="@+id/title"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
                     android:fontFamily="@font/light"
-                    android:text="Do you want to clear your scanning history?"
+                    android:gravity="center"
+                    android:text="@string/do_you_want_to_clear_your_scanning_history"
                     android:textColor="@color/darkblue" />
 
-                <RelativeLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/questuio"
@@ -59,25 +59,48 @@
                     android:layout_marginTop="40dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
+                    android:weightSum="2"
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/dismiss"
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:background="@drawable/button_bg"
-                        android:src="@drawable/cancel" />
+                        android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/confirm"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cancel" />
+
+                        <ImageView
+                            android:id="@+id/dismiss"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_bg"
+                            android:src="@drawable/cancel" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:gravity="center"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:background="@drawable/button_bg"
-                        android:src="@drawable/clear" />
+                        android:layout_height="wrap_content">
 
+                        <ImageView
+                            android:id="@+id/confirm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_bg"
+                            android:src="@drawable/clear" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/clear" />
+
+                    </RelativeLayout>
                     <!--                    <TextView-->
                     <!--                        android:id="@+id/dismiss"-->
                     <!--                        android:layout_width="wrap_content"-->
@@ -100,7 +123,7 @@
                     <!--                        android:text="Yes"-->
                     <!--                        android:textColor="@color/darkblue"-->
                     <!--                        android:textSize="25sp" />-->
-                </RelativeLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

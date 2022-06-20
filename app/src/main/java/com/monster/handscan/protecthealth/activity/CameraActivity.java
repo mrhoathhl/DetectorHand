@@ -45,6 +45,7 @@ import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -64,6 +65,7 @@ import com.monster.handscan.protecthealth.env.ImageUtils;
 import com.monster.handscan.protecthealth.env.Logger;
 import com.monster.handscan.protecthealth.fragment.CameraConnectionFragment;
 import com.monster.handscan.protecthealth.fragment.LegacyCameraConnectionFragment;
+import com.monster.handscan.protecthealth.utils.FunctionUtil;
 import com.monster.handscan.protecthealth.utils.StringUtil;
 
 import java.nio.ByteBuffer;
@@ -95,7 +97,8 @@ public abstract class CameraActivity extends AppCompatActivity
     private MaxAdView adView;
     private boolean mBannerInitialized;
 
-    private ImageButton backBtn, challengeBtn, okBtn;
+    private ImageButton backBtn, okBtn;
+    private ImageView challengeBtn;
     private CardView resultPopupCard;
     private boolean isScanned;
     private TextView percentTxt, resultTxt, actionTxt;
@@ -106,6 +109,7 @@ public abstract class CameraActivity extends AppCompatActivity
         LOGGER.d("onCreate " + this);
         super.onCreate(null);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        FunctionUtil.setLanguage(this);
 
         setContentView(R.layout.tfe_od_activity_camera);
 
@@ -115,20 +119,20 @@ public abstract class CameraActivity extends AppCompatActivity
             requestPermission();
         }
         setScanned(false);
-        backBtn = (ImageButton) findViewById(R.id.backBtn);
-        challengeBtn = (ImageButton) findViewById(R.id.challengeBtn);
-        okBtn = (ImageButton) findViewById(R.id.cleanBtn);
+        backBtn = findViewById(R.id.backBtn);
+        challengeBtn = findViewById(R.id.challengeBtn);
+        okBtn = findViewById(R.id.cleanBtn);
 
-        percentTxt = (TextView) findViewById(R.id.percentTxt);
-        resultTxt = (TextView) findViewById(R.id.resultTxt);
-        actionTxt = (TextView) findViewById(R.id.actionTxt);
-        relativeLayout = (RelativeLayout) findViewById(R.id.showVirus);
+        percentTxt = findViewById(R.id.percentTxt);
+        resultTxt = findViewById(R.id.resultTxt);
+        actionTxt = findViewById(R.id.actionTxt);
+        relativeLayout = findViewById(R.id.showVirus);
 
         backBtn.setOnClickListener(this);
         challengeBtn.setOnClickListener(this);
         okBtn.setOnClickListener(this);
 
-        resultPopupCard = (CardView) findViewById(R.id.resultPopup);
+        resultPopupCard = findViewById(R.id.resultPopup);
         setResultPopupCard(resultPopupCard);
         setPercentTxt(percentTxt);
         setResultTxt(resultTxt);

@@ -25,6 +25,7 @@ import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.activity.MainActivity;
 import com.monster.handscan.protecthealth.adapters.ListHistoryAdapter;
 import com.monster.handscan.protecthealth.model.ScanHistoryModel;
+import com.monster.handscan.protecthealth.utils.FunctionUtil;
 import com.monster.handscan.protecthealth.utils.StringUtil;
 
 import java.util.List;
@@ -45,6 +46,7 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_history, container, false);
+        FunctionUtil.setLanguage(requireActivity());
         List<ScanHistoryModel> image_details = MainActivity.self().db.getAllScanHistories();
         listView = (ListView) view.findViewById(R.id.history_list);
         if (image_details != null && image_details.size() > 0) {

@@ -38,6 +38,7 @@ import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.customview.AutoFitTextureView;
 import com.monster.handscan.protecthealth.env.ImageUtils;
 import com.monster.handscan.protecthealth.env.Logger;
+import com.monster.handscan.protecthealth.utils.FunctionUtil;
 
 public class LegacyCameraConnectionFragment extends Fragment {
     private static final Logger LOGGER = new Logger();
@@ -108,6 +109,7 @@ public class LegacyCameraConnectionFragment extends Fragment {
     @Override
     public View onCreateView(
             final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+        FunctionUtil.setLanguage(getActivity());
         return inflater.inflate(layout, container, false);
     }
 

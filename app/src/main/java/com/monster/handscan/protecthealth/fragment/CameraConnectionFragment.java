@@ -69,6 +69,7 @@ import java.util.concurrent.TimeUnit;
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.customview.AutoFitTextureView;
 import com.monster.handscan.protecthealth.env.Logger;
+import com.monster.handscan.protecthealth.utils.FunctionUtil;
 
 @SuppressLint("ValidFragment")
 public class CameraConnectionFragment extends Fragment {
@@ -321,6 +322,7 @@ public class CameraConnectionFragment extends Fragment {
     @Override
     public View onCreateView(
             final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+        FunctionUtil.setLanguage(getActivity());
         return inflater.inflate(layout, container, false);
     }
 

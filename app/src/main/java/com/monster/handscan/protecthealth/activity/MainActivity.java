@@ -2,6 +2,8 @@ package com.monster.handscan.protecthealth.activity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -37,8 +39,10 @@ import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.adapters.SharedPrefsManager;
 import com.monster.handscan.protecthealth.database.SQLiteDBHelper;
 import com.monster.handscan.protecthealth.fragment.HomeFragment;
+import com.monster.handscan.protecthealth.utils.FunctionUtil;
 import com.monster.handscan.protecthealth.utils.StringUtil;
 
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mSelf = this;
-
+        FunctionUtil.setLanguage(this);
         AppLovinSdk.getInstance(this).setMediationProvider("max");
         AppLovinSdk.initializeSdk(this, configuration -> {
         });

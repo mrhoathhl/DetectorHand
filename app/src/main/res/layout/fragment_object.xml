@@ -71,7 +71,7 @@
                         android:layout_marginBottom="40dp"
                         android:fontFamily="@font/condensedbold"
                         android:gravity="center"
-                        android:text="Coming soon"
+                        android:text="@string/coming_soon"
                         android:textAlignment="center"
                         android:textColor="@color/darkblue"
                         android:textSize="25sp" />
@@ -84,7 +84,7 @@
                         android:layout_marginTop="40dp"
                         android:fontFamily="@font/medium"
                         android:gravity="center"
-                        android:text="This feature is under development!"
+                        android:text="@string/this_feature_is_under_development"
                         android:textAlignment="center"
                         android:textColor="@color/darkblue"
                         android:textSize="15sp" />

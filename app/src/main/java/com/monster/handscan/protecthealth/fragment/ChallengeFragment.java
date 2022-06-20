@@ -23,6 +23,7 @@ import com.monster.handscan.protecthealth.activity.MainActivity;
 import com.monster.handscan.protecthealth.adapters.ListViewAdapter;
 import com.monster.handscan.protecthealth.adapters.SharedPrefsManager;
 import com.monster.handscan.protecthealth.model.ScanHistoryModel;
+import com.monster.handscan.protecthealth.utils.FunctionUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,7 @@ public class ChallengeFragment extends Fragment implements View.OnClickListener 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_challenge, container, false);
 
+        FunctionUtil.setLanguage(requireActivity());
         List<ScanHistoryModel> image_details = getListData();
         listView = (ListView) view.findViewById(R.id.dayList);
         listView.setAdapter(new ListViewAdapter(getContext(), image_details));

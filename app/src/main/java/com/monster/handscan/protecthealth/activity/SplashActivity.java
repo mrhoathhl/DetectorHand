@@ -1,6 +1,9 @@
 package com.monster.handscan.protecthealth.activity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,13 +21,25 @@ import com.monster.handscan.protecthealth.database.SQLiteDBHelper;
 import com.monster.handscan.protecthealth.fragment.HomeFragment;
 import com.monster.handscan.protecthealth.fragment.SettingFragment;
 
+import java.util.Locale;
+
 public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Start home activity
+        setLocale(this, "jp");
         startActivity(new Intent(SplashActivity.this, MainActivity.class));
         // close splash activity
         finish();
+    }
+
+    public static void setLocale(Activity activity, String languageCode) {
+        Locale locale = new Locale("th");
+        Locale.setDefault(locale);
+        Resources resources = activity.getResources();
+        Configuration config = resources.getConfiguration();
+        config.setLocale(locale);
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
     }
 }

@@ -40,32 +40,48 @@
                     android:layout_marginTop="28dp"
                     android:fontFamily="@font/light"
                     android:gravity="center_vertical"
-                    android:text="@string/challenge"
+                    android:text="@string/have_joined"
                     android:textColor="#ffffff"
                     android:textSize="14sp" />
 
-                <ImageButton
-                    android:id="@+id/challengeBtn"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="18dp"
-                    android:background="@drawable/button_bg"
-                    android:src="@drawable/challenge" />
+                    android:layout_marginTop="18dp">
+
+                    <ImageView
+                        android:id="@+id/challengeBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/button_bg"
+                        android:src="@drawable/challenge">
+                    </ImageView>
+
+                    <TextView
+                        android:textSize="17sp"
+                        android:textColor="#0072dc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/challenge" />
+
+                </RelativeLayout>
             </LinearLayout>
         </RelativeLayout>
 
         <FrameLayout
-            android:layout_below="@+id/toolbar"
             android:id="@+id/native_ad_layout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:layout_below="@+id/toolbar" />
 
 
         <RelativeLayout
-            android:layout_below="@+id/native_ad_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/native_ad_layout">
 
             <FrameLayout
                 android:id="@+id/container"
@@ -176,7 +192,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="100dp"
                 android:fontFamily="@font/light"
-                android:text="Spread your hand to start scanning"
+                android:text="@string/spread_your_hand_to_start_scanning"
                 android:textAlignment="center"
                 android:textColor="@color/white" />
         </RelativeLayout>
@@ -184,7 +200,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/my_template"
             android:background="@drawable/shadowbg">
 
             <androidx.cardview.widget.CardView

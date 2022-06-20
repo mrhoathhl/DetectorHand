@@ -31,6 +31,7 @@ import com.monster.handscan.protecthealth.BuildConfig;
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.activity.DetectorActivity;
 import com.monster.handscan.protecthealth.activity.MainActivity;
+import com.monster.handscan.protecthealth.utils.FunctionUtil;
 import com.monster.handscan.protecthealth.utils.StringUtil;
 
 import java.util.Objects;
@@ -52,6 +53,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         Log.e("Change", "Change1");
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        FunctionUtil.setLanguage(requireActivity());
         fragmentManager = requireActivity().getSupportFragmentManager();
         ((MainActivity) requireActivity()).showBanner();
         FrameLayout nativeAdContainer = view.findViewById(R.id.native_ad_layout);
