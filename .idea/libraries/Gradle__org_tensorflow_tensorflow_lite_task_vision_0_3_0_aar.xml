@@ -10,6 +10,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f6ef7c3c9ff92d7d81b0c9beb7ef9c60/transformed/jetified-tensorflow-lite-task-vision-0.3.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f6ef7c3c9ff92d7d81b0c9beb7ef9c60/transformed/jetified-tensorflow-lite-task-vision-0.3.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f6ef7c3c9ff92d7d81b0c9beb7ef9c60/transformed/jetified-tensorflow-lite-task-vision-0.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a954888d3ea4512373fb6c93abda16a9/transformed/jetified-tensorflow-lite-task-vision-0.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a954888d3ea4512373fb6c93abda16a9/transformed/jetified-tensorflow-lite-task-vision-0.3.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a954888d3ea4512373fb6c93abda16a9/transformed/jetified-tensorflow-lite-task-vision-0.3.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

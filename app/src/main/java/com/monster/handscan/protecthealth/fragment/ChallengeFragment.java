@@ -81,18 +81,18 @@ public class ChallengeFragment extends Fragment implements View.OnClickListener 
     private List<ScanHistoryModel> getListData() {
         List<ScanHistoryModel> list_db = MainActivity.self().db.getAllHistoriesChallenge();
         List<ScanHistoryModel> list = new ArrayList<>();
-        list.add(new ScanHistoryModel(R.drawable.day1, false, false));
-        list.add(new ScanHistoryModel(R.drawable.day2, false, false));
-        list.add(new ScanHistoryModel(R.drawable.day3, false, false));
-        list.add(new ScanHistoryModel(R.drawable.day4, false, false));
-        list.add(new ScanHistoryModel(R.drawable.day5, false, false));
-        list.add(new ScanHistoryModel(R.drawable.day6, false, false));
-        list.add(new ScanHistoryModel(R.drawable.day7, false, false));
+        list.add(new ScanHistoryModel(getResources().getString(R.string.day) + " 1", false, false));
+        list.add(new ScanHistoryModel(getResources().getString(R.string.day) + " 2", false, false));
+        list.add(new ScanHistoryModel(getResources().getString(R.string.day) + " 3", false, false));
+        list.add(new ScanHistoryModel(getResources().getString(R.string.day) + " 4", false, false));
+        list.add(new ScanHistoryModel(getResources().getString(R.string.day) + " 5", false, false));
+        list.add(new ScanHistoryModel(getResources().getString(R.string.day) + " 6", false, false));
+        list.add(new ScanHistoryModel(getResources().getString(R.string.day) + " 7", false, false));
         if (list_db.size() >= 7) {
             showDialog();
             MainActivity.self().db.deleteAllChallengeHistories();
         } else {
-            if (list_db != null && list_db.size() > 0) {
+            if (list_db.size() > 0) {
                 for (int i = 0; i < list.size(); i++) {
                     if (i < list_db.size()) {
                         list.get(i).setDay(list_db.get(i).isDay());

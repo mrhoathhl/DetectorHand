@@ -167,7 +167,7 @@
             android:layout_width="match_parent"
             android:layout_height="470dp"
             android:layout_marginTop="60dp"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:cardBackgroundColor="@color/white"
             android:layout_centerInParent="true"
             app:cardCornerRadius="20dp"
@@ -191,16 +191,37 @@
                     android:layout_marginEnd="20dp"
                     android:src="@drawable/blank" />
 
-                <ImageView
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/day8" />
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/day" />
 
-                <ImageView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/day"
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:src="@drawable/night" />
+                    android:layout_marginStart="20dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/night" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textColor="#ffffff"
+                        android:text="@string/night"/>
+                </RelativeLayout>
             </LinearLayout>
 
             <ListView

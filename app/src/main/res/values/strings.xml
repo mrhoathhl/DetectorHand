@@ -29,5 +29,7 @@
     <string name="cancel">Cancel</string>
     <string name="clear">Clear</string>
     <string name="spread_your_hand_to_start_scanning">Spread your hand to start scanning</string>
+    <string name="day">Day</string>
+    <string name="night">Night</string>
 
 </resources>

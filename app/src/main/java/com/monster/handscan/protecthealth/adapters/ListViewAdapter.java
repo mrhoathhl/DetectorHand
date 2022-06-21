@@ -1,5 +1,6 @@
 package com.monster.handscan.protecthealth.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.monster.handscan.protecthealth.R;
 import com.monster.handscan.protecthealth.model.DayChallengeModel;
@@ -40,12 +42,13 @@ public class ListViewAdapter extends BaseAdapter {
         return position;
     }
 
+    @SuppressLint("InflateParams")
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.challenge_item, null);
             holder = new ViewHolder();
-            holder.dayLabel = (ImageView) convertView.findViewById(R.id.dayLabel);
+            holder.dayLabel = (TextView) convertView.findViewById(R.id.dayLabel);
             holder.dayHand = (ImageView) convertView.findViewById(R.id.dayHand);
             holder.nightHand = (ImageView) convertView.findViewById(R.id.nightHand);
             convertView.setTag(holder);
@@ -55,7 +58,7 @@ public class ListViewAdapter extends BaseAdapter {
 
         ScanHistoryModel country = this.listData.get(position);
 
-        holder.dayLabel.setImageResource(country.getDayLabel());
+        holder.dayLabel.setText(country.getDayLabel());
         if (country.isDay()) {
             holder.dayHand.setImageResource(R.drawable.handon);
         } else {
@@ -83,7 +86,7 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        ImageView dayLabel;
+        TextView dayLabel;
         ImageView dayHand;
         ImageView nightHand;
     }

@@ -4,12 +4,12 @@ public class ScanHistoryModel {
     private int id;
     private String percent;
     private String time;
-    private int dayLabel;
+    private String dayLabel;
     private boolean isDay;
     private boolean isNight;
     private String type;
 
-    public ScanHistoryModel(int id, String percent, String time, int dayLabel, boolean isDay, boolean isNight, String type) {
+    public ScanHistoryModel(int id, String percent, String time, String dayLabel, boolean isDay, boolean isNight, String type) {
         this.id = id;
         this.percent = percent;
         this.time = time;
@@ -23,7 +23,7 @@ public class ScanHistoryModel {
 
     }
 
-    public ScanHistoryModel(int dayLabel, boolean isDay, boolean isNight) {
+    public ScanHistoryModel(String dayLabel, boolean isDay, boolean isNight) {
         this.dayLabel = dayLabel;
         this.isDay = isDay;
         this.isNight = isNight;
@@ -61,11 +61,11 @@ public class ScanHistoryModel {
         this.time = time;
     }
 
-    public int getDayLabel() {
+    public String getDayLabel() {
         return dayLabel;
     }
 
-    public void setDayLabel(int dayLabel) {
+    public void setDayLabel(String dayLabel) {
         this.dayLabel = dayLabel;
     }
 

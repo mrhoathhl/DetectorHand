@@ -35,6 +35,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../lib_interpreter/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../lib_interpreter/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../lib_interpreter/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../lib_interpreter/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../lib_interpreter/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../../lib_interpreter/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../lib_interpreter/build" />

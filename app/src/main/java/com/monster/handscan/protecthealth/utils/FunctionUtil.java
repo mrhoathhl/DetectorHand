@@ -18,8 +18,8 @@ import java.util.Locale;
 public class FunctionUtil {
     public static void setLanguage(Activity activity) {
 
-        //Locale locale = new Locale(Locale.getDefault().getLanguage());
-        Locale locale = new Locale("ar");
+        Locale locale = new Locale(Locale.getDefault().getLanguage());
+        //Locale locale = new Locale("ar");
         Locale.setDefault(locale);
         Resources resources = activity.getResources();
         Configuration config = resources.getConfiguration();

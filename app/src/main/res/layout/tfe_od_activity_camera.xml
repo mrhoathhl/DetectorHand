@@ -59,13 +59,12 @@
                     </ImageView>
 
                     <TextView
-                        android:textSize="17sp"
-                        android:textColor="#0072dc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/challenge" />
+                        android:layout_centerInParent="true"
+                        android:text="@string/challenge"
+                        android:textColor="#0072dc"
+                        android:textSize="17sp" />
 
                 </RelativeLayout>
             </LinearLayout>

@@ -60,23 +60,24 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
                     android:weightSum="2"
-                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <RelativeLayout
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textColor="#0072dc"
                             android:text="@string/cancel" />
 
                         <ImageView
                             android:id="@+id/dismiss"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/button_bg"
                             android:src="@drawable/cancel" />
@@ -86,18 +87,20 @@
                     <RelativeLayout
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
                         <ImageView
                             android:id="@+id/confirm"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/button_bg"
                             android:src="@drawable/clear" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textColor="#ffffff"
                             android:text="@string/clear" />
 
                     </RelativeLayout>
