@@ -7,9 +7,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b620c283b7a9ff237b9c4f97fc3fbaa7/transformed/jetified-appcompat-resources-1.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b620c283b7a9ff237b9c4f97fc3fbaa7/transformed/jetified-appcompat-resources-1.1.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b620c283b7a9ff237b9c4f97fc3fbaa7/transformed/jetified-appcompat-resources-1.1.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e45386995c63380273018b61d4817a73/transformed/jetified-appcompat-resources-1.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e45386995c63380273018b61d4817a73/transformed/jetified-appcompat-resources-1.1.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/e45386995c63380273018b61d4817a73/transformed/jetified-appcompat-resources-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e45386995c63380273018b61d4817a73/transformed/jetified-appcompat-resources-1.1.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Pemindaian Tangan - Perlindungan Kesehatan</string>
+    <string name="tfe_od_camera_error">Perangkat ini tidak mendukung Camera2 API.</string>
+    <string name="next">Lanjut</string>
+    <string name="previous">Sebelumnya</string>
+    <string name="challenge">Tantangan</string>
+    <string name="settings">Pengaturan</string>
+    <string name="text_challenge">Kebiasaan cuci tangan
+akan terbentuk setelah 7 hari berturut-turut</string>
+    <string name="advice">Nasihat</string>
+    <string name="history">Sejarah</string>
+    <string name="challenge_mainmenu">Tantangan</string>
+    <string name="press_button_mainmenu">Tekan tombol untuk memindai</string>
+    <string name="rate_us">Nilai kami</string>
+    <string name="go_back_home">Sebelum pulang ke rumah</string>
+    <string name="go_to_bed">Sebelum dan sesudah tidur</string>
+    <string name="after_eating">Sebelum dan sesudah makan</string>
+    <string name="after_shaking_hand">Setelah berjabat tangan</string>
+    <string name="after_workout">Setelah berolahraga</string>
+    <string name="clean_your_hands_n_within_7_days">Bersihkan tangan Anda
+dalam 7 hari</string>
+    <string name="people_accepted_the_challenge">orang menerima tantangan</string>
+    <string name="you_can_remove_the_ads_after_n_completing_the_challenge">Anda dapat menghapus iklan setelah
+menyelesaikan tantangan</string>
+    <string name="this_feature_is_under_development">Fitur ini sedang dalam pengembangan!</string>
+    <string name="coming_soon">Segera</string>
+    <string name="policy">Aturan</string>
+    <string name="clear_history">Hapus riwayat</string>
+    <string name="do_you_want_to_clear_your_scanning_history">Apakah Anda ingin menghapus riwayat pemindaian Anda?</string>
+    <string name="cancel">Membatalkan</string>
+    <string name="clear">Jernih</string>
+    <string name="have_joined">15040 telah bergabung</string>
+    <string name="spread_your_hand_to_start_scanning">Rentangkan tangan Anda untuk mulai memindai</string>
+</resources>

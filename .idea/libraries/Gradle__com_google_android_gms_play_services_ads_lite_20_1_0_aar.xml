@@ -8,8 +8,8 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/29132f0a79eb9a10af76dcb4e741dfb9/transformed/jetified-play-services-ads-lite-20.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/29132f0a79eb9a10af76dcb4e741dfb9/transformed/jetified-play-services-ads-lite-20.1.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7b0a60c0faf478a0e51b560716949f8d/transformed/jetified-play-services-ads-lite-20.1.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7b0a60c0faf478a0e51b560716949f8d/transformed/jetified-play-services-ads-lite-20.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7b0a60c0faf478a0e51b560716949f8d/transformed/jetified-play-services-ads-lite-20.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7b0a60c0faf478a0e51b560716949f8d/transformed/jetified-play-services-ads-lite-20.1.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-ads-lite/20.1.0/cb224379f9a2a7f9fb01b9e39492db41f50dc4a7/play-services-ads-lite-20.1.0-javadoc.jar!/" />

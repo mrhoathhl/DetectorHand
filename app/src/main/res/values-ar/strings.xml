@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">مسح اليد - حماية الصحة</string>
+    <string name="tfe_od_camera_error">هذا الجهاز لا يدعم Camera2 API.</string>
+    <string name="next">التالي</string>
+    <string name="previous">سابق</string>
+    <string name="challenge">تحدي</string>
+    <string name="settings">إعدادات</string>
+    <string name="text_challenge">تتشكل عادة غسل اليدين \ n بعد 7 أيام متتالية</string>
+    <string name="advice">نصيحة</string>
+    <string name="history">تاريخ</string>
+    <string name="challenge_mainmenu">تحدي</string>
+    <string name="press_button_mainmenu">اضغط على الزر للمسح</string>
+    <string name="rate_us">قيمنا</string>
+    <string name="go_back_home">قبل العودة للمنزل</string>
+    <string name="go_to_bed">قبل وبعد النوم</string>
+    <string name="after_eating">قبل وبعد الأكل</string>
+    <string name="after_shaking_hand">بعد المصافحة</string>
+    <string name="after_workout">بعد التمرين</string>
+    <string name="clean_your_hands_n_within_7_days">نظف يديك
+خلال 7 أيام</string>
+    <string name="people_accepted_the_challenge">قبل الناس التحدي</string>
+    <string name="you_can_remove_the_ads_after_n_completing_the_challenge">يمكنك إزالة الإعلانات بعد
+إكمال التحدي</string>
+    <string name="this_feature_is_under_development">هذه الميزة قيد التطوير!</string>
+    <string name="coming_soon">قريبا</string>
+    <string name="policy">سياسة</string>
+    <string name="clear_history">تاريخ واضح</string>
+    <string name="do_you_want_to_clear_your_scanning_history">هل تريد مسح محفوظات المسح؟</string>
+    <string name="cancel">يلغي</string>
+    <string name="clear">صافي</string>
+    <string name="have_joined">15040 انضموا</string>
+    <string name="spread_your_hand_to_start_scanning">انشر يدك لبدء المسح</string>
+</resources>

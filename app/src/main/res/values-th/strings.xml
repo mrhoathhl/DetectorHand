@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">สแกนมือ - การคุ้มครองสุขภาพ</string>
+    <string name="tfe_od_camera_error">อุปกรณ์นี้ไม่รองรับ Camera2 API</string>
+    <string name="next">ต่อไป</string>
+    <string name="previous">ก่อนหน้า</string>
+    <string name="challenge">ท้าทาย</string>
+    <string name="settings">การตั้งค่า</string>
+    <string name="text_challenge">นิสัยการล้างมือ
+จะก่อตัวขึ้นหลังจาก 7 วันติดต่อกัน</string>
+    <string name="advice">คำแนะนำ</string>
+    <string name="history">ประวัติศาสตร์</string>
+    <string name="challenge_mainmenu">ท้าทาย</string>
+    <string name="press_button_mainmenu">กดปุ่มเพื่อสแกน</string>
+    <string name="rate_us">ให้คะแนนเรา</string>
+    <string name="go_back_home">ก่อนกลับบ้าน</string>
+    <string name="go_to_bed">ก่อน-หลังเข้านอน</string>
+    <string name="after_eating">ก่อนและหลังรับประทานอาหาร</string>
+    <string name="after_shaking_hand">หลังจากจับมือกัน</string>
+    <string name="after_workout">หลังออกกำลังกาย</string>
+    <string name="clean_your_hands_n_within_7_days">ล้างมือให้สะอาด
+ภายใน 7 วัน</string>
+    <string name="people_accepted_the_challenge">ผู้คนยอมรับความท้าทาย</string>
+    <string name="you_can_remove_the_ads_after_n_completing_the_challenge">คุณสามารถลบโฆษณาหลังจาก
+เสร็จสิ้นการท้าทาย</string>
+    <string name="this_feature_is_under_development">ฟีเจอร์นี้อยู่ระหว่างการพัฒนา!</string>
+    <string name="coming_soon">เร็วๆ นี้</string>
+    <string name="policy">นโยบาย</string>
+    <string name="clear_history">ล้างประวัติ</string>
+    <string name="do_you_want_to_clear_your_scanning_history">คุณต้องการล้างประวัติการสแกนของคุณหรือไม่?</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="clear">ชัดเจน</string>
+    <string name="have_joined">15040 ได้เข้าร่วม</string>
+    <string name="spread_your_hand_to_start_scanning">กางมือเพื่อเริ่มสแกน</string>
+</resources>

@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Elle Tarama - Sağlığın Korunması</string>
+    <string name="tfe_od_camera_error">Bu cihaz Camera2 API\'sini desteklemiyor.</string>
+    <string name="next">Sonraki</string>
+    <string name="previous">Öncesi</string>
+    <string name="challenge">Meydan okumak</string>
+    <string name="settings">Ayarlar</string>
+    <string name="text_challenge">El yıkama alışkanlığı
+art arda 7 gün sonra oluşturulacak</string>
+    <string name="advice">Tavsiye</string>
+    <string name="history">Tarih</string>
+    <string name="challenge_mainmenu">Meydan okumak</string>
+    <string name="press_button_mainmenu">Taramak için düğmeye basın</string>
+    <string name="rate_us">Bizi değerlendirin</string>
+    <string name="go_back_home">eve dönmeden önce</string>
+    <string name="go_to_bed">yatmadan önce ve sonra</string>
+    <string name="after_eating">Yemekten önce ve sonra</string>
+    <string name="after_shaking_hand">el sıkıştıktan sonra</string>
+    <string name="after_workout">çalıştıktan sonra</string>
+    <string name="clean_your_hands_n_within_7_days">ellerini temizle
+7 gün içinde</string>
+    <string name="people_accepted_the_challenge">insanlar meydan okumayı kabul etti</string>
+    <string name="you_can_remove_the_ads_after_n_completing_the_challenge">sonra reklamları kaldırabilirsiniz.
+meydan okumayı tamamlamak</string>
+    <string name="this_feature_is_under_development">Bu özellik geliştirilme aşamasındadır!</string>
+    <string name="coming_soon">Çok yakında</string>
+    <string name="policy">Politika</string>
+    <string name="clear_history">Geçmişi temizle</string>
+    <string name="do_you_want_to_clear_your_scanning_history">Tarama geçmişinizi temizlemek istiyor musunuz?</string>
+    <string name="cancel">İptal</string>
+    <string name="clear">Temizlemek</string>
+    <string name="spread_your_hand_to_start_scanning">Taramaya başlamak için elinizi açın</string>
+</resources>
