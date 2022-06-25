@@ -31,4 +31,6 @@ menyelesaikan tantangan</string>
     <string name="clear">Jernih</string>
     <string name="have_joined">15040 telah bergabung</string>
     <string name="spread_your_hand_to_start_scanning">Rentangkan tangan Anda untuk mulai memindai</string>
+    <string name="day">Hari</string>
+    <string name="night">Malam</string>
 </resources>

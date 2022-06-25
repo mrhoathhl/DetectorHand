@@ -190,6 +190,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="100dp"
+                android:gravity="center"
                 android:fontFamily="@font/light"
                 android:text="@string/spread_your_hand_to_start_scanning"
                 android:textAlignment="center"

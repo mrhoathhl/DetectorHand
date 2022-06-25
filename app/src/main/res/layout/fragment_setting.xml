@@ -34,6 +34,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/condensedbold"
+                android:gravity="center"
                 android:text="@string/settings"
                 android:textAlignment="center"
                 android:textColor="#ffffff"

@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:fontFamily="@font/medium"
-                android:gravity="bottom"
+                android:gravity="center|bottom"
                 android:textAlignment="center"
                 tools:ignore="RtlCompat"
                 android:layout_marginBottom="20dp"/>

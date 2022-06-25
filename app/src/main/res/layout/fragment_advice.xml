@@ -36,6 +36,7 @@
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/condensedbold"
                 android:text="@string/advice"
+                android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textSize="22sp" />

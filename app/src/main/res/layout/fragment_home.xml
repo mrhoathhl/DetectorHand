@@ -75,6 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:gravity="center"
                 android:text="@string/press_button_mainmenu"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
@@ -197,6 +198,7 @@
                         android:layout_marginBottom="20dp"
                         android:text="@string/challenge_mainmenu"
                         android:textAlignment="center"
+                        android:gravity="center"
                         android:textColor="@color/darkblue" />
 
                 </RelativeLayout>

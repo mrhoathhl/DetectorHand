@@ -32,6 +32,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:gravity="center"
                 android:fontFamily="@font/condensedbold"
                 android:text="@string/history"
                 android:textAlignment="center"

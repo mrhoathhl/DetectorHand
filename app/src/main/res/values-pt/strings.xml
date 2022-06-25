@@ -31,4 +31,6 @@ completando o desafio</string>
     <string name="clear">Claro</string>
     <string name="have_joined">15040 aderiram</string>
     <string name="spread_your_hand_to_start_scanning">Abra a mão para começar a digitalizar</string>
+    <string name="day">Dia</string>
+    <string name="night">Noite</string>
 </resources>

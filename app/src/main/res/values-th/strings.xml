@@ -31,4 +31,6 @@
     <string name="clear">ชัดเจน</string>
     <string name="have_joined">15040 ได้เข้าร่วม</string>
     <string name="spread_your_hand_to_start_scanning">กางมือเพื่อเริ่มสแกน</string>
+    <string name="day">วัน</string>
+    <string name="night">กลางคืน</string>
 </resources>

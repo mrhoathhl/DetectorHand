@@ -30,4 +30,7 @@ meydan okumayı tamamlamak</string>
     <string name="cancel">İptal</string>
     <string name="clear">Temizlemek</string>
     <string name="spread_your_hand_to_start_scanning">Taramaya başlamak için elinizi açın</string>
+    <string name="have_joined">+15040 katıldı</string>
+    <string name="day">Gün</string>
+    <string name="night">Gece</string>
 </resources>

@@ -30,4 +30,6 @@
     <string name="clear">صافي</string>
     <string name="have_joined">15040 انضموا</string>
     <string name="spread_your_hand_to_start_scanning">انشر يدك لبدء المسح</string>
+    <string name="day">يوم</string>
+    <string name="night">ليل</string>
 </resources>
